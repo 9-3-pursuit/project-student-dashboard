@@ -14,8 +14,8 @@ function Students (props) {
                 <div key={student.id}>
                     <img src={student.profilePhoto}/>
                     <h4>{student.names.preferredName} {student.names.middleName.charAt(0)}. {student.names.surname}</h4>
-                    <h4>{student.username}</h4>
-                    <h4>Birthday: {formatDOB(student)}</h4>
+                    <p>{student.username}</p>
+                    <p><span>Birthday:</span> {formatDOB(student)}</p>
                     <a href="">Show More...</a>
                 </div>
             )})}
