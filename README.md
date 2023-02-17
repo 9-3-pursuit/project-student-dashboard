@@ -1,6 +1,6 @@
 # React Mid-Module Project
 
-![Landing page.](./instruction-assets/landing.png)
+![Landing page.](./assets/instruction-assets/landing.png)
 
 For this assignment, you will build a student dashboard that will make use of some randomized data. The dashboard should show easy to understand data, formatted in a way that is easy for a user to use.
 
@@ -41,7 +41,7 @@ _Take careful note of the requirements._ Sometimes an image will show slightly m
 
 ### ✩ Student list (1 point)
 
-![Student list.](./instruction-assets/student-list.png)
+![Student list.](./assets/instruction-assets/student-list.png)
 
 Create a list of students that displays when you arrive on the page. At the top of this list, should be the following:
 
@@ -56,7 +56,7 @@ Each student shown on the list should include the following:
 
 ### ✩ Cohort list (1 point)
 
-![Cohort list.](./instruction-assets/cohort-list.png)
+![Cohort list.](./assets/instruction-assets/cohort-list.png)
 
 Create a list of cohorts based on the data you have available. To complete this feature, the following must be true:
 
@@ -75,7 +75,7 @@ Update your cohort list so that the following is true:
 
 ### ✩ Interactive cohort list (1 point)
 
-![Interactive cohort list.](./instruction-assets/interactive-cohort-list.png)
+![Interactive cohort list.](./assets/instruction-assets/interactive-cohort-list.png)
 
 Update your cohort list so that when any of the cohorts are clicked the student list updates to only show students in that cohort. To complete this feature, the following must be true:
 
@@ -86,7 +86,7 @@ Update your cohort list so that when any of the cohorts are clicked the student 
 
 ### ✩ Improved student list (1 point)
 
-![Improved student list.](./instruction-assets/improved-student-list.png)
+![Improved student list.](./assets/instruction-assets/improved-student-list.png)
 
 Update your interactive student list so that the following is true:
 
@@ -103,11 +103,11 @@ Update your interactive student list so that the following is true:
 
 ### ✩ Additional student details (1 point)
 
-![Closed student details.](./instruction-assets/student-details-closed.png)
+![Closed student details.](./assets/instruction-assets/student-details-closed.png)
 
 Add a button to each student that, when clicked, displays more information about the student.
 
-![Opened student details.](./instruction-assets/student-details-opened.png)
+![Opened student details.](./assets/instruction-assets/student-details-opened.png)
 
 To complete this feature, the following should be true:
 
@@ -129,7 +129,7 @@ Update the student details section so that the following is true:
 
 ### ✩ 1-on-1 section (1 point)
 
-![One-on-one section.](./instruction-assets/one-on-one-section.png)
+![One-on-one section.](./assets/instruction-assets/one-on-one-section.png)
 
 Create a section in the student details section that contains information about a student's 1-on-1 with an instructor. To complete this feature, the following should be true:
 
