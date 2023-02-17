@@ -105,3 +105,10 @@ table {
 #root {
   height: 100vh;
 }
+
+/* Layout */
+
+main {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
