@@ -1,14 +1,24 @@
 import "./StudentList.css";
 import { studentData } from "../../data/data";
 
-export default function StudentList() {
+export default function StudentList({ cohortFiler }) {
+  let studentList = [...studentData];
+  if (cohortFiler !== "All Students") {
+    studentList = studentList.filter(
+      ({ cohort: { cohortCode } }) => cohortCode === cohortFiler
+    );
+  }
   return (
     <>
       <div className="student-list">
-        <h2>All Students</h2>
-        <p>Total Students: 250</p>
+        <h2>
+          {cohortFiler === "All Students"
+            ? cohortFiler
+            : `${cohortFiler.slice(0, -4)} ${cohortFiler.slice(-4)}`}
+        </h2>
+        <p>Total Students: 0</p>
         <div>
-          {studentData.map((student) => {
+          {studentList.map((student) => {
             const {
               profilePhoto,
               names: { preferredName, middleName, surname },
@@ -16,7 +26,7 @@ export default function StudentList() {
               dob,
             } = student;
             return (
-              <div className="single-student">
+              <div className="single-student" key={student.id}>
                 <img
                   src={profilePhoto}
                   alt={preferredName + " profile photo"}
@@ -32,7 +42,7 @@ export default function StudentList() {
                   </p>
                 </div>
                 <div>
-                  <p>Show More...</p>
+                  <p className="show-more">Show More...</p>
                 </div>
               </div>
             );
