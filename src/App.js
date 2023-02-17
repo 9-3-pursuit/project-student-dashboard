@@ -2,7 +2,7 @@
 function App() {
   return (
     <div>
-      <h1>Student Dashboard</h1>
+      <header>Student Dashboard</header>
     </div>
   );
 }
