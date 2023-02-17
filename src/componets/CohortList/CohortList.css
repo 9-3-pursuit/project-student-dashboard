@@ -1,0 +1,19 @@
+.cohort-list {
+  padding: 2rem;
+  font-family: "Courier New", Courier, monospace;
+}
+
+h2 {
+  text-align: center;
+}
+
+table {
+  width: 100%;
+}
+
+tr {
+  border-bottom: rgb(124, 175, 147) 0.2rem solid;
+  height: 3rem;
+  cursor: pointer;
+  font-weight: 900;
+}

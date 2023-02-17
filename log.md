@@ -6,13 +6,13 @@ This is a log of my progress as I manage this project. I've used similar logs in
 
 Inspired by the [Thinking in React](https://beta.reactjs.org/learn/thinking-in-react) page in the documentation, my plan is:
 
-> 1. Break Down the UI into Component Hierarchy.
+> 1. ✅ Break Down the UI into Component Hierarchy.
 >    ![Diagram of Component Hierarchy](./assets/Student%20Dashboard%20Diagram-3.jpg "Component Hierarchy")
 >
 > 1. Create static version
 >
->    1. Create header component
->    1. Create CohortList component
+>    1. ✅ Create header component
+>    1. ✅ Create CohortList component
 >    1. Create StudentList component
 >    1. Style page layout
 >
