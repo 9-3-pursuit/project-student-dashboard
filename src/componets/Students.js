@@ -8,6 +8,7 @@ function Students ({updatedStudentsData, studentsData}) {
         return (`${months[parseInt(splitStudent[0]-1)]} ${splitStudent[1]}, ${splitStudent[2]}`);
     }
 
+
     const regexp = /(.+)(\d{4})/;
 
     return (
@@ -18,11 +19,14 @@ function Students ({updatedStudentsData, studentsData}) {
             <h4>Total Students: {studentsData.length}</h4>
             {studentsData.map((student) => {return(
                 <div className="studentCard" key={generateUniqueID()}>
-                    <img src={student.profilePhoto} alt={student.id}/>
-                    <h4>{student.names.preferredName} {student.names.middleName.charAt(0)}. {student.names.surname}</h4>
-                    <p>{student.username}</p>
-                    <p><span>Birthday:</span> {formatDOB(student)}</p>
-                    <a href="here">Show More...</a>
+                    <div><img src={student.profilePhoto} alt={student.id}/></div>
+                    <div>
+                        <h4>{student.names.preferredName} {student.names.middleName.charAt(0)}. {student.names.surname}</h4>
+                        <p>{student.username}</p>
+                        <p><span>Birthday:</span> {formatDOB(student)}</p>
+                        <a href="here">Show More...</a>
+                    </div>
+                    <div>{Object.values(student.certifications).every((certificate) => certificate === true) && student.codewars.current.total >= 600 ? <h4>On Track to Graduate</h4>: <h4>not on Track</h4>}</div>
                 </div>
                     )})}
             </div>
@@ -36,6 +40,7 @@ function Students ({updatedStudentsData, studentsData}) {
                 <p>{student.username}</p>
                 <p><span>Birthday:</span> {formatDOB(student)}</p>
                 <a href="here">Show More...</a>
+                <div>{Object.values(student.certifications).every((certificate) => certificate === true) && student.codewars.current.total >= 600 ? <h4>On Track to Graduate</h4>: <h4>not on Track</h4>}</div>
             </div>
                 )})}
         </div>}
