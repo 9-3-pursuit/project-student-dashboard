@@ -1,17 +1,17 @@
 .cohort-list {
-  padding: 2rem;
+  padding: 0 2rem;
   font-family: "Courier New", Courier, monospace;
 }
 
-h2 {
+.cohort-list h2 {
   text-align: center;
 }
 
-table {
+.cohort-list table {
   width: 100%;
 }
 
-tr {
+.cohort-list tr {
   border-bottom: rgb(124, 175, 147) 0.2rem solid;
   height: 3rem;
   cursor: pointer;
