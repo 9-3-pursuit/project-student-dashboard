@@ -1,7 +1,7 @@
 export default function SingleCohort({ handleClick, cohortCode }) {
   return (
     <>
-      <tr key={cohortCode}>
+      <tr>
         <td
           onClick={() => {
             handleClick(cohortCode);

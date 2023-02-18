@@ -15,7 +15,7 @@ export default function StudentList({
         <p>Total Students: {students.length}</p>
         <div>
           {students.map((student) => (
-            <SingleStudent student={student} />
+            <SingleStudent key={student.id} student={student} />
           ))}
         </div>
       </div>

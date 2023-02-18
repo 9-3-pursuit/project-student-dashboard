@@ -13,7 +13,7 @@ export default function SingleStudent({ student }) {
   const onTrack = checkStudentOnTrack(student); //Line 39
 
   return (
-    <div className="single-student" key={student.id}>
+    <div className="single-student">
       <img src={profilePhoto} alt={preferredName + " profile photo"} />
       <div>
         <h3>{`${preferredName} ${middleName.slice(0, 1)}. ${surname}`}</h3>

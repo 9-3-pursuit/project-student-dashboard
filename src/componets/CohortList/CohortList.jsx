@@ -13,7 +13,11 @@ export default function CohortList({ handleClick }) {
       <table>
         <tbody>
           {AllCohortOptions.map((cohortCode) => (
-            <SingleCohort cohortCode={cohortCode} handleClick={handleClick} />
+            <SingleCohort
+              key={cohortCode}
+              cohortCode={cohortCode}
+              handleClick={handleClick}
+            />
           ))}
         </tbody>
       </table>
