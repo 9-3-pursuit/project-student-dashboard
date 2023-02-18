@@ -9,29 +9,29 @@ Inspired by the [Thinking in React](https://beta.reactjs.org/learn/thinking-in-r
 > 1. ✅ Break Down the UI into Component Hierarchy.
 >    ![Diagram of Component Hierarchy](./assets/Student%20Dashboard%20Diagram-3.jpg "Component Hierarchy")
 >
-> 1. Create static version
+> 1. ✅ Create static version
 >
 >    1. ✅ Create header component
 >    1. ✅ Create CohortList component
->    1. Create StudentList component
->    1. Style page layout
+>    1. ✅ Create StudentList component
+>    1. ✅ Style page layout
 >
-> 1. Find the minimal but complete representation of UI state
-> 1. Identify where your state should live
-> 1. Add inverse data flow
+> 1. ✅ Find the minimal but complete representation of UI state (see Componet diagram)
+> 1. ✅ Identify where your state should live
+> 1. Add inverse data flow (see Componet diagram)
 
 I also need to keep track of which requirements I've built/fulfilled and which I haven't:
 
 > ### Required Features:
 >
-> 1. ✩ Sorted and formatted cohort list
-> 1. ✩ Cohort list
-> 1. ✩ Interactive cohort list
-> 1. ✩ Student list
-> 1. ✩ Improved student list
-> 1. ✩ Additional student details
-> 1. ✩ Improved student details
-> 1. ✩ 1-on-1 section
+> 1. ★ Cohort list
+> 1. ★ Sorted and formatted cohort list
+> 1. ★ Interactive cohort list
+> 1. ★ Student list
+> 1. ★ Improved student list
+> 1. ★ Additional student details
+> 1. ★ Improved student details
+> 1. ★ 1-on-1 section
 > 1. ✩ Interactive 1-on-1 section
 > 1. ✩ Style your application
 
@@ -44,6 +44,8 @@ I'm really proud of **\_\_\_**.
 I really struggled with **\_\_\_\_**.
 
 My greatest take away is **\_\_\_\_**.
+
+- realized that i need a seperate thinking in react checklist for each component/section I create
 
 # Log Part 2: The Log Continues
 
