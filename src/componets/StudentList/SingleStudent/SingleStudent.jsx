@@ -34,7 +34,7 @@ export default function SingleStudent({ student }) {
       {expanded && (
         <>
           <StatsSection student={student} />
-          <OneOnOne />
+          <OneOnOne notes={student.notes} />
         </>
       )}
     </div>

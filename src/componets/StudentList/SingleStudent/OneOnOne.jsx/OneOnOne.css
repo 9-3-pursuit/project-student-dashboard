@@ -1,0 +1,32 @@
+.one-on-one {
+  grid-column: 1 / 4;
+  border-top: rgb(124, 175, 147) solid;
+  padding: 2rem 14rem 0;
+}
+
+.one-on-one,
+form {
+  display: flex;
+  flex-direction: column;
+  width: max-content;
+  margin: 0 auto;
+}
+
+.one-on-one form {
+  border: black 0.5px solid;
+  padding: 2rem;
+}
+
+.one-on-one input[type="submit"],
+h3 {
+  width: fit-content;
+  align-self: center;
+}
+.one-on-one input[type="text"] {
+  margin: 0.5rem 0 0.5rem 1rem;
+  align-items: first baseline;
+}
+
+.one-on-one ul {
+  margin-top: 1.5rem;
+}
