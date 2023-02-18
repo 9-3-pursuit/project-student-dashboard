@@ -10,11 +10,23 @@
   grid-row: 1 /3;
 }
 
-.student-list .single-student {
+.single-student {
   border: rgb(124, 175, 147) 0.1rem solid;
   margin-bottom: 1rem;
   padding: 2rem;
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: auto 1fr auto;
   gap: 2rem;
+}
+
+.single-student .show-more {
+  cursor: pointer;
+  border-bottom: rgb(124, 175, 147) 0.1rem solid;
+  color: rgb(124, 175, 147);
+  width: fit-content;
+}
+
+.single-student .on-track {
+  border: rgb(124, 175, 147) 0.1rem solid;
+  padding: 1.5rem 2rem;
 }

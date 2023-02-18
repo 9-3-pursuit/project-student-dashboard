@@ -10,6 +10,11 @@ export default function SingleStudent({ student }) {
     dob,
   } = student;
 
+  const certOnTrack = Object.values(student.certifications).every(
+    (value) => value !== false
+  );
+  const onTrack = certOnTrack && student.codewars.current.total >= 600;
+
   return (
     <div className="single-student" key={student.id}>
       <img src={profilePhoto} alt={preferredName + " profile photo"} />
@@ -20,6 +25,9 @@ export default function SingleStudent({ student }) {
           <strong>Birthday:</strong>
           {dob}
         </p>
+      </div>
+      <div>
+        {onTrack && <h5 className="on-track">On Track To Graduation!</h5>}
       </div>
       <div>
         <p className="show-more" onClick={() => setExpanded(!expanded)}>
