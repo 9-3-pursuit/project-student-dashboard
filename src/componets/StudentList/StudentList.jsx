@@ -1,4 +1,4 @@
-import SingleStudent from "./SingleStudent";
+import SingleStudent from "./SingleStudent/SingleStudent";
 import "./StudentList.css";
 
 export default function StudentList({
