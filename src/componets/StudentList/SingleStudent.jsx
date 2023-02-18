@@ -10,10 +10,7 @@ export default function SingleStudent({ student }) {
     dob,
   } = student;
 
-  const certOnTrack = Object.values(student.certifications).every(
-    (value) => value !== false
-  );
-  const onTrack = certOnTrack && student.codewars.current.total >= 600;
+  const onTrack = checkStudentOnTrack(student); //Line 39
 
   return (
     <div className="single-student" key={student.id}>
@@ -22,8 +19,7 @@ export default function SingleStudent({ student }) {
         <h3>{`${preferredName} ${middleName.slice(0, 1)}. ${surname}`}</h3>
         <p>{username}</p>
         <p>
-          <strong>Birthday:</strong>
-          {dob}
+          <strong>Birthday:</strong> {formatDOB(dob)}
         </p>
       </div>
       <div>
@@ -37,4 +33,22 @@ export default function SingleStudent({ student }) {
       {expanded && <StatsSection student={student} />}
     </div>
   );
+}
+
+function checkStudentOnTrack(student) {
+  const certOnTrack = Object.values(student.certifications).every(
+    (value) => value !== false
+  );
+  const onTrack = certOnTrack && student.codewars.current.total >= 600;
+
+  return onTrack;
+}
+
+function formatDOB(DOB) {
+  let splitDOB = DOB.split("/").reverse();
+  let formattedDOB = new Intl.DateTimeFormat("en-US", {
+    dateStyle: "medium",
+  }).format(new Date(...splitDOB));
+
+  return formattedDOB;
 }
