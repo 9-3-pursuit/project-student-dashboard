@@ -1,5 +1,6 @@
 import { useState } from "react";
 import StatsSection from "./StatsSection/StatsSection";
+import OneOnOne from "./OneOnOne.jsx/OneOnOne";
 
 export default function SingleStudent({ student }) {
   const [expanded, setExpanded] = useState(false);
@@ -30,7 +31,12 @@ export default function SingleStudent({ student }) {
           Show {expanded ? "Less" : "More"}...
         </p>
       </div>
-      {expanded && <StatsSection student={student} />}
+      {expanded && (
+        <>
+          <StatsSection student={student} />
+          <OneOnOne />
+        </>
+      )}
     </div>
   );
 }
