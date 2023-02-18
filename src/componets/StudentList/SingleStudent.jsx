@@ -26,7 +26,7 @@ export default function SingleStudent({ student }) {
           Show {expanded ? "Less" : "More"}...
         </p>
       </div>
-      {expanded && <h1>Stats </h1>}
+      {expanded && <StatsSection student={student} />}
     </div>
   );
 }
