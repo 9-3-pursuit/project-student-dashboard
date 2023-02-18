@@ -1,36 +1,37 @@
-import Header from "./componets/Header/Header";
-import CohortList from "./componets/CohortList/CohortList";
-import StudentList from "./componets/StudentList/StudentList";
+import Header from "./Componets/Header/Header";
+import CohortList from "./Componets/CohortList/CohortList";
+import StudentList from "./Componets/StudentList/StudentList";
 import { useState } from "react";
 import { studentData } from "./data/data";
 
-function App() {
-  const INITIAL_STUDENT_STATE = [...studentData];
-  const INITIAL_FILTER_STATE = ["All Students"];
-  const [studentList, setStudentList] = useState(INITIAL_STUDENT_STATE);
-  const [cohorFiler, setCohortFilter] = useState(INITIAL_FILTER_STATE);
+export default function App() {
+  const OnScreenInitalState = {
+    filter: "All Students",
+    students: [...studentData],
+  };
+  const [studentsOnScreen, setStudentsOnScreen] = useState(OnScreenInitalState);
 
-  function handleClick() {
-    const updatedStudentList = studentData.filter(
-      (student) => student.cohort.cohortCode === cohorFiler
-    );
-    cohorFiler === "All Students"
-      ? setStudentList(INITIAL_STUDENT_STATE)
-      : setStudentList(updatedStudentList);
+  function handleClick(newCohortCode) {
+    if (newCohortCode === "All Students") {
+      setStudentsOnScreen(OnScreenInitalState);
+    } else {
+      const updatedStudentList = studentData.filter((student) => {
+        return student.cohort.cohortCode === newCohortCode;
+      });
+      setStudentsOnScreen({
+        filter: newCohortCode,
+        students: updatedStudentList,
+      });
+    }
   }
 
   return (
     <>
       <Header />
       <main>
-        <CohortList
-          handleClick={handleClick}
-          setCohortFilter={setCohortFilter}
-        />
-        <StudentList cohortFiler={cohorFiler} />
+        <CohortList handleClick={handleClick} />
+        <StudentList studentsOnScreen={studentsOnScreen} />
       </main>
     </>
   );
 }
-
-export default App;

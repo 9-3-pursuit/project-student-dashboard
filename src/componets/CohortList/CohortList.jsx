@@ -1,7 +1,8 @@
 import "./CohortList.css";
 import { studentData } from "../../data/data";
+import SingleCohort from "./SingleCohort";
 
-export default function CohortList({ handleClick, setCohortFilter }) {
+export default function CohortList({ handleClick }) {
   const cohortCodes = studentData.reduce(getUniqueCohortCodes, []);
   const AllCohortOptions = ["All Students", ...cohortCodes];
 
@@ -11,18 +12,7 @@ export default function CohortList({ handleClick, setCohortFilter }) {
       <table>
         <tbody>
           {AllCohortOptions.map((cohortCode) => (
-            <tr key={cohortCode}>
-              <td
-                onClick={() => {
-                  setCohortFilter(cohortCode);
-                  handleClick();
-                }}
-              >
-                {cohortCode === "All Students"
-                  ? cohortCode
-                  : `${cohortCode.slice(0, -4)} ${cohortCode.slice(-4)}`}
-              </td>
-            </tr>
+            <SingleCohort cohortCode={cohortCode} handleClick={handleClick} />
           ))}
         </tbody>
       </table>
