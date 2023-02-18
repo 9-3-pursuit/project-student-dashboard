@@ -7,17 +7,21 @@ export default function StatsSection({ student }) {
     cohort: { scores },
   } = student;
 
-  const codewarsToDisplay = { ...current, "Goal total": goal.total };
+  const codewarsToDisplay = {
+    total: current.total,
+    goal: goal.total,
+    "goal completed": current.total / goal.total,
+  };
   return (
     <>
       <div className="stats-section">
         <div>
           <h3>Certifications</h3>
-          <CertificationLister object={certifications} />
+          <ScoreLister object={certifications} />
         </div>
         <div>
           <h3>CodeWars</h3>
-          <ObjectPorpertyLister object={codewarsToDisplay} />
+          <ScoreLister object={codewarsToDisplay} />
         </div>
         <div>
           <h3>Scores</h3>
@@ -28,33 +32,33 @@ export default function StatsSection({ student }) {
   );
 }
 
-function ObjectPorpertyLister({ object }) {
-  let list = [];
-
-  for (let key in object) {
-    list.push(<p key={key + object[key]}>{`${key}: ${object[key]}`}</p>);
-  }
-  return list;
-}
-
 function ScoreLister({ object }) {
-  let list = [];
+  return Object.entries(object).map((score) => {
+    const category = score[0][0].toUpperCase() + score[0].slice(1);
+    let categoryScore = `${score[1]}pts`;
 
-  for (let key in object) {
-    list.push(<p key={key + object[key]}>{`${key}: ${object[key] * 100}%`}</p>);
-  }
-  return list;
+    if (object.hasOwnProperty("projects") || score[0].includes("completed")) {
+      categoryScore = `${Math.round(score[1] * 100)}%`;
+    }
+    if (object.hasOwnProperty("resume")) {
+      categoryScore = score[1] === false ? "❌" : "✅";
+    }
+
+    return (
+      <p
+        key={score[0] + score[1]}
+        className={score[0].includes("completed") && generatesTag(score)}
+      >
+        {category}: {categoryScore}
+      </p>
+    );
+  });
 }
 
-function CertificationLister({ object }) {
-  let list = [];
-
-  for (let key in object) {
-    list.push(
-      <p key={key + object[key]}>{`${key}: ${
-        object[key] === false ? "❌" : "✅"
-      }`}</p>
-    );
-  }
-  return list;
+function generatesTag(score) {
+  return score[1] < 0.5
+    ? "show-red"
+    : score[1] >= 1
+    ? "show-green"
+    : "show-yellow";
 }
