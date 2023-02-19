@@ -1,3 +1,5 @@
+import "../styles/Cohorts.css"
+
 function Cohorts ({studentsData, onSelectedCohort}) {
     const StudentsCohortList = studentsData.map((cohort) => {
         return cohort.cohort.cohortCode;
@@ -9,7 +11,6 @@ function Cohorts ({studentsData, onSelectedCohort}) {
     const regexp = /(.+)(\d{4})/; // grabs all values and splits it by the second rule which grabs 4 digits
     const fixedCohortList = cohortList.map((cohort) => {
     const [season, year] = regexp.exec(cohort).slice(1);
-    //console.log(regexp.exec(cohort).slice(1))
     return [season, year, seasons.indexOf(season)];
     })
     .sort((lhs, rhs) => {
@@ -19,12 +20,13 @@ function Cohorts ({studentsData, onSelectedCohort}) {
 
 
     return (
-        <div>
+        <div className="cohortDiv">
+            <h2>Choose a Class by Start Date</h2>
             <ul>
-                <li onClick={()=>onSelectedCohort()}>All Student</li>
+                <li className="cohort" onClick={()=>onSelectedCohort("All Students")}>All Student</li>
                 {fixedCohortList.map((cohort, index) => {
                 return (
-                    <li key={index} onClick={()=>onSelectedCohort(cohort)}>{cohort}</li>
+                    <li className="cohort" key={index} onClick={()=>onSelectedCohort(cohort)}>{cohort}</li>
                 )})}
             </ul>
         </div>
