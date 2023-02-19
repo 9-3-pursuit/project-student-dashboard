@@ -1,0 +1,25 @@
+.card{
+    display: grid;
+    grid-template-columns: 100px 2fr 1fr;
+    column-gap: 25px;
+    padding: 25px;
+    margin: 10px;
+    border: 2px solid green;
+}
+
+img{
+    width: 100px;
+    border-radius: 7px;
+}
+
+.toggle-details{
+    background-color: none;
+    border: none;
+    text-decoration: underline;
+    color: green;
+
+}
+
+span{
+    color: green;
+}
