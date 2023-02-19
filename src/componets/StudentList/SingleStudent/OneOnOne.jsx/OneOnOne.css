@@ -1,7 +1,7 @@
 .one-on-one {
   grid-column: 1 / 4;
   border-top: rgb(124, 175, 147) solid;
-  padding: 2rem 14rem 0;
+  padding: 2rem 10rem 0;
 }
 
 .one-on-one,
@@ -17,14 +17,28 @@ form {
   padding: 2rem;
 }
 
+.one-on-one input[type="text"] {
+  margin: 0.5rem 0 0.5rem 0.5rem;
+}
+
+.one-on-one textarea {
+  margin: 1rem 0;
+  resize: vertical;
+}
+
 .one-on-one input[type="submit"],
-h3 {
+.one-on-one h3 {
   width: fit-content;
   align-self: center;
+  cursor: pointer;
+  border: none;
 }
-.one-on-one input[type="text"] {
-  margin: 0.5rem 0 0.5rem 1rem;
-  align-items: first baseline;
+
+.one-on-one input[type="submit"] {
+  padding: 0.5rem;
+  background-color: green;
+  color: white;
+  color: white;
 }
 
 .one-on-one ul {
