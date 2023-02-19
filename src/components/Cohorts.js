@@ -24,7 +24,7 @@ export default function Cohorts({ studentData}) {
     
     return sortedAndFormattedCohorts.map(cohorts => {
         return(
-            <h4 key={cohorts}>{cohorts}</h4>
+            <h4 key={cohorts} className="cohorts">{cohorts}</h4>
         )
     })
 
