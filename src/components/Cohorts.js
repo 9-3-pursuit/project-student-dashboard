@@ -1,5 +1,6 @@
 
-export default function Cohorts({ studentData}) {
+
+export default function Cohorts({ studentData, setCohort }) {
     
     const cohortSet = new Set();
     studentData.map(student => cohortSet.add(`${student.cohort.cohortCode} ${student.cohort.cohortStartDate}`));
@@ -21,11 +22,22 @@ export default function Cohorts({ studentData}) {
         const formattedSeason = spacedLettersArray.join("")
         return formattedSeason
     })
+
+    function handleClick(cohorts) {
+        setCohort(cohorts)
+
+    }
     
-    return sortedAndFormattedCohorts.map(cohorts => {
+    return(
+        <div>
+            <h4 className="cohorts" onClick={() => handleClick("All Students")}>All Students</h4>
+            {sortedAndFormattedCohorts.map(cohorts => {
         return(
-            <h4 key={cohorts} className="cohorts">{cohorts}</h4>
+            <h4 key={cohorts} className="cohorts" onClick={() => handleClick(cohorts)}>{cohorts}</h4>
         )
-    })
+    })}
+        </div>
+    ) 
+    
 
 }
