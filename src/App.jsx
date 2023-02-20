@@ -30,7 +30,11 @@ const App = () => {
 
   return (
     <div>
-      <h1>Student Dashboard</h1>
+      <Header />
+      <div>
+        <Cohorts studentData={studentData} handleFilterStudentsByCohortClick={handleFilterStudentsByCohortClick} />
+        <Students studentData={studentDataClone} addNewNoteToStudent={addNewNoteToStudent} />
+      </div>
     </div>
   );
 };
