@@ -16,7 +16,17 @@ const App = () => {
     setStudentDataClone(clonedStudentDataForNoteUpdate);
   };
 
-  const handleFilterStudentsByCohortClick = (cohort) => {};
+  const handleFilterStudentsByCohortClick = (cohort) => {
+    if (cohort === "all") {
+      setStudentDataClone(studentData);
+    } else {
+      const reformattedCohortCode = cohort.replace(" ", "");
+      const clonedStudentDataToFilterByCohort = studentData;
+      const filterStudentsByCohortCode = clonedStudentDataToFilterByCohort.filter((student) => student.cohort.cohortCode === reformattedCohortCode);
+
+      setStudentDataClone(filterStudentsByCohortCode);
+    }
+  };
 
   return (
     <div>
