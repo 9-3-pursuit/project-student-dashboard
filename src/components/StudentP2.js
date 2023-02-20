@@ -13,8 +13,8 @@ const StudentP2 = ({id,info,setInfo,student}) => {
     }
 
     return (
-        <div>
-         <a href="#" onClick={toggleShowMore}> {!showMore ? "Show more..." : "Hide less..."}</a>
+        <div className="p2button">
+         <button onClick={toggleShowMore}> {!showMore ? "Show more..." : "Hide less..."}</button>
         {showMore ? ( 
           <div>
             < Achievement student={student}/>

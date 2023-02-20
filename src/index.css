@@ -79,7 +79,7 @@ main {
     margin: 5px;
     border: 1.3px solid rgb(236, 60, 6);
     border-radius: 10px;
-    background-color:#e3e3e3 ;
+    background-color:#d7d7d7 ;
     display: flex;
     justify-content:space-between;
     padding-left: 7px;
@@ -128,7 +128,7 @@ form {
    padding: 7px;
    border: 1.3px solid rgb(236, 60, 6);
    border-radius: 10px;
-   background-color:#e4e4e4 ;
+   background-color:#d7d7d7 ;
 }
 
 
@@ -136,8 +136,16 @@ form .dblock {
     display: block;
     margin: 3px;
 }
-a:hover {
-    border: 1px solid black;
-    color: red;
+
+.p2button button {
+    border: 0.3px solid  #ededed;
+    border-radius: 6px;
+    
 }
+
+.p2button button:hover {
+    color: red;
+    cursor: pointer;
+}
+
 
