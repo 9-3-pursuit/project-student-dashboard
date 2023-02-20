@@ -21,7 +21,7 @@ function Cohorts ({studentsData, onSelectedCohort}) {
 
     return (
         <div className="cohortDiv">
-            <h2>Choose a Class by Start Date</h2>
+            <h2 className="">Choose a Class by Start Date</h2>
             <ul>
                 <li className="cohort" onClick={()=>onSelectedCohort("All Students")}>All Student</li>
                 {fixedCohortList.map((cohort, index) => {

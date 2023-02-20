@@ -4,9 +4,11 @@ import "../styles/Student.css"
 
 function Student ({student}) {
     const [showMore, setShowMore] = useState(false);
-    const [comments, setComments] = useState([]);
-    const [commenters, setCommenter] = useState([]);
-    const [notes, setNotes] = useState ([]);
+    const [notes, setNotes] = useState ([...student.notes]); 
+    const [newNotes, setNewNotes] = useState({
+        "commenter": "",
+        "comment": ""
+    })
 
     const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
     function formatDOB (student) {
@@ -18,14 +20,11 @@ function Student ({student}) {
         setShowMore(!showMore);
     }
 
-    function handleChangeComments (event) {
-        setComments([event.target.value]);
-        console.log(comments);
-    }
-
-    function handleChangeCommenter (event) {
-        setCommenter([event.target.value]);
-        console.log(commenters);
+    function handleTextChange (event) {
+        setNewNotes({
+            ...newNotes,
+            [event.target.id]: event.target.value,
+        })
     }
 
     function onSubmit (event) {
@@ -33,20 +32,22 @@ function Student ({student}) {
 
         if (notes.length === 0) {
             setNotes([{
-                "commenter": commenters,
-                "comment": comments
+                "commenter": newNotes.commenter,
+                "comment": newNotes.comment
               }])
         } else {
             setNotes([...notes, {
-                "commenter": commenters,
-                "comment": comments
+                "commenter": newNotes.commenter,
+                "comment": newNotes.comment
               }])
         }
         console.log(notes)
-        setComments([]);
-        setCommenter([]);
+        setNewNotes({
+            "commenter": "",
+            "comment": ""
+        });
     }
-    console.log(student.certifications)
+
     return (
         <div className="studentCard" >
         <div ><img src={student.profilePhoto} alt={student.id}/></div>
@@ -86,16 +87,16 @@ function Student ({student}) {
                         <div>
                             <form className="commentForm" onSubmit={onSubmit}>
                                 <label htmlFor="commenter">Commenter Name</label>
-                                <input id="commenter" name="commenter" type="text" value={commenters} onChange={handleChangeCommenter}/>
+                                <input id="commenter" name="commenter" type="text" value={newNotes.commenter} onChange={handleTextChange}/>
                                 <label htmlFor="comment">Comment</label>
-                                <input id="comment" name="comment" type="text" value={comments} onChange={handleChangeComments}/>
+                                <input id="comment" name="comment" type="text" value={newNotes.comment} onChange={handleTextChange}/>
                                 <button>Add Notes</button>
                             </form>
                         </div>
                         <ul>
-                            {student.notes.map((comment, index) => {return (
+                            {/* {student.notes.map((comment, index) => {return (
                                 <li key={index}>{comment.commenter} says, "{comment.comment}"</li>
-                            )})}
+                            )})} */}
                             {notes.map((comment, index) => {return (
                                 <li key={index}>{comment.commenter} says, "{comment.comment}"</li>
                             )})}
