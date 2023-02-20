@@ -33,7 +33,7 @@ const App = () => {
       <Header />
       <div>
         <Cohorts studentData={studentData} handleFilterStudentsByCohortClick={handleFilterStudentsByCohortClick} />
-        <Students studentData={studentDataClone} addNewNoteToStudent={addNewNoteToStudent} />
+        <Students studentDataClone={studentDataClone} addNewNoteToStudent={addNewNoteToStudent} />
       </div>
     </div>
   );
