@@ -1,0 +1,122 @@
+body {
+    background-color: rgb(163, 92, 163);
+    list-style-type: none;
+}
+
+header {
+    height: 50px;
+    background-color: rgb(128, 0, 128);
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+header h1 {
+    color: white;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 30% 70%;
+}
+
+.cohorts {
+    background-color: rgb(132, 132, 212);
+    margin-right: 10px;
+}
+
+.cohorts li {
+    list-style-type: none;
+    padding-bottom: 10px;
+}
+
+.students {
+    background-color: rgb(179, 94, 179);
+    border-color: rgb(128, 0, 128);
+}
+
+div.students {
+    border: rgb(128, 0, 128);
+}
+
+.students li {
+    list-style-type: none;
+}
+
+.students img {
+    width: 180px;
+    max-height: 250px;
+}
+
+.individualStudent {
+    border: 1px solid pink;
+    margin: 5px;
+    padding: 10px;
+    border-color: rgb(128, 0, 128);
+}
+
+div.individualStudent {
+    border: none;
+}
+
+.asideStudentPhoto {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: start;
+    margin: 5px;   
+}
+
+.studentDetailedInfo {
+    margin-left: 15px;
+}
+
+.achievement {
+    margin: 5px;
+    border: 1px solid rgb(128, 0, 128);
+    display: flex;
+    justify-content:space-between;
+    padding-left: 7px;
+    padding-right: 7px;
+}
+
+.achievement li {
+    list-style-type: none;
+    padding-bottom: 7px;
+}
+
+.achievement red {
+    color: darkred ;
+}
+
+.achievement green {
+    color: rgb(3, 58, 3);
+} 
+
+.achievement yellow {
+    color: yellow
+}
+
+form {
+    padding: 7px;
+     border: 1px solid rgb(128, 0, 128);
+}
+
+form .dblock {
+    display: block;
+    margin: 3px;
+}
+
+button:hover {
+    border: 1px solid rgb(128, 0, 128);
+    background:  rgb(132, 132, 212);
+}
+
+a:hover {
+    border: 1px solid  rgb(128, 0, 128);
+    background:  rgb(132, 132, 212);
+}
+
+/* footer { 
+    background-color: rgb(128, 0, 128);
+} */
