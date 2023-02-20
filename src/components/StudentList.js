@@ -1,13 +1,13 @@
-import Student from "./Student"
+import Students from "./Students"
 
-export default function StudentList() {
+export default function StudentList({ cohort, currentCohortArray, studentData }) {
 
     return(
         <div className="studentListDiv">
-            <h2>All Students</h2>
-            <p>Total Students: {}</p>
+            <h2 className="studentListHeader">{cohort}</h2>
+            <p className="totalStudents">Total Students: <span className="studentTotalSpan">{currentCohortArray.length || studentData.length}</span></p>
             <div className="studentDivs">
-                <Student />
+                <Students currentCohortArray={currentCohortArray} studentData={studentData} />
             </div>
         </div>
         

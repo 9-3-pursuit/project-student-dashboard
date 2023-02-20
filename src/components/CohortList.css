@@ -2,7 +2,6 @@
 .cohortDiv {
     width: 400px;
     height: auto;
-    font-family: 'Merriweather Sans', sans-serif;
 }
 
 .cohortHeader {
@@ -10,6 +9,7 @@
 }
 
 .cohorts {
-    border-bottom: 1px solid #5c946f;
+    border-bottom: 2px solid #5c946f;
     padding: 0 0 10px 10px;
+    cursor: pointer;
 }

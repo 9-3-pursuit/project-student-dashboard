@@ -1,0 +1,45 @@
+
+.studentDivs {
+    display: grid;
+    row-gap: 10px;
+}
+
+.student {
+    border: 2px solid #5c946f;
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    padding: 30px;
+}
+
+.studentListHeader {
+    margin-bottom: 0;
+}
+
+.totalStudents {
+    margin-top: 0;
+    font-weight: 600;
+}
+
+.studentTotalSpan {
+    color: #5c946f;
+}
+
+.studentMainInfo p,
+h3 {
+    margin: 5px 0 0 0;
+}
+
+.birthdaySpan {
+    color: #5c946f;
+    font-weight: 600;
+}
+
+.showMore {
+    grid-column: 2;
+    color: #5c946f;
+    text-decoration: underline;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+

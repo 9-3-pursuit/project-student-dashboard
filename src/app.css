@@ -1,0 +1,21 @@
+body {
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+header {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    height: 100px;
+    width: 100vw;
+    background: #5c946f;
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 500px 1fr;
+    margin: 20px 40px;
+}
