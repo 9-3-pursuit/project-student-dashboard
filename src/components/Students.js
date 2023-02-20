@@ -1,17 +1,13 @@
 import "./StudentList.css"
 
-export default function Students({ currentCohortArray, studentData }) {
-    let activeStudentArray = studentData
-
-        
-    
+export default function Students({ currentCohortArray }) {
 
     const formatBirthday = new Intl.DateTimeFormat("en", {
         dateStyle: "long"
     })
    
     return(
-        activeStudentArray.map(student => {
+        currentCohortArray.map(student => {
             const birthday = new Date(student.dob)
             return(
                 <div key={student.id} className="student">
