@@ -9,15 +9,23 @@ function App() {
   const initialCohort = "All Students";
   const [cohort, setCohort] = useState(initialCohort);
   const [currentCohortArray, setCurrentCohortArray] = useState(studentData);
-  useEffect(() => {
-     if (cohort === "All Students") {
-            setCurrentCohortArray(studentData)
-        } else {
-            const cohortArray = studentData.filter(student => addSpaceBetweenCohort(student.cohort.cohortCode) === cohort);
-            setCurrentCohortArray(cohortArray)
-        }
-  }, [cohort])
-  
+  // useEffect(() => {
+  //    if (cohort === "All Students") {
+  //           setCurrentCohortArray(studentData)
+  //       } else {
+  //           const cohortArray = studentData.filter(student => addSpaceBetweenCohort(student.cohort.cohortCode) === cohort);
+  //           setCurrentCohortArray(cohortArray)
+  //       }
+  // }, [cohort])
+  function handleCohortClick(cohorts) {
+      setCohort(cohorts)
+      if (cohorts === "All Students") {
+          setCurrentCohortArray(studentData)
+      } else {
+          const cohortArray = studentData.filter(student => addSpaceBetweenCohort(student.cohort.cohortCode) === cohorts)    
+          setCurrentCohortArray(cohortArray)
+      }
+  }
 
   return (
     <div>
@@ -27,6 +35,10 @@ function App() {
           studentData={studentData} 
           setCohort={setCohort} 
           addSpaceBetweenCohort={addSpaceBetweenCohort}
+          cohort={cohort}
+          currentCohortArray={currentCohortArray}
+          setCurrentCohortArray={setCurrentCohortArray}
+          handleCohortClick={handleCohortClick}
         />
         <StudentList 
           cohort={cohort} 

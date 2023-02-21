@@ -1,6 +1,6 @@
 
 
-export default function Cohorts({ studentData, setCohort, addSpaceBetweenCohort }) {
+export default function Cohorts({ studentData, addSpaceBetweenCohort, handleCohortClick }) {
     
     const cohortSet = new Set();
     studentData.map(student => cohortSet.add(`${student.cohort.cohortCode} ${student.cohort.cohortStartDate}`));
@@ -19,18 +19,12 @@ export default function Cohorts({ studentData, setCohort, addSpaceBetweenCohort 
         return formattedSeason;
     });
 
-    function handleClick(cohorts) {
-        setCohort(cohorts)
-    }
-
-    
-    
     return(
         <div>
-            <h4 className="cohorts" onClick={() => handleClick("All Students")}>All Students</h4>
+            <h4 className="cohorts" onClick={() => handleCohortClick("All Students")}>All Students</h4>
             {sortedAndFormattedCohorts.map(cohorts => {
                 return(
-                    <h4 key={cohorts} className="cohorts" onClick={() => handleClick(cohorts)}>{cohorts}</h4>
+                    <h4 key={cohorts} className="cohorts" onClick={() => handleCohortClick(cohorts)}>{cohorts}</h4>
                 )
             })}
         </div>

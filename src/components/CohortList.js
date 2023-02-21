@@ -1,7 +1,7 @@
 import Cohorts from "./Cohorts";
 import "./CohortList.css"
 
-export default function CohortList({ studentData, setCohort, addSpaceBetweenCohort }) {
+export default function CohortList({ studentData, addSpaceBetweenCohort, handleCohortClick }) {
 
     
     return(
@@ -10,11 +10,10 @@ export default function CohortList({ studentData, setCohort, addSpaceBetweenCoho
             <div className="cohortDate">
                 <Cohorts 
                     studentData={studentData} 
-                    setCohort={setCohort} 
                     addSpaceBetweenCohort={addSpaceBetweenCohort}
+                    handleCohortClick={handleCohortClick}
                 />
             </div>
-
         </div>
     )
 }
