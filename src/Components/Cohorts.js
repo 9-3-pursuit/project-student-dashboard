@@ -6,20 +6,19 @@ const Cohorts = ({info, setCohort}) =>{
         return arr.filter((item, index) => arr.indexOf(item) === index)
     }
 
-  let newArr = removeDuplicateCohort(info.map((student) => student.cohort.cohortCode))
+  let duplicateStudentArr = removeDuplicateCohort(info.map((student) => student.cohort.cohortCode))
 
-  newArr.unshift('All Students')
+  duplicateStudentArr.unshift('All Students')
 
     return (
         < div className="cohorts">
-            <h2>Choose a Class by Start Date</h2>
+            <h2> 📚 Choose a Class by Start Date 📅 </h2>
             <hr></hr>
             <ul>
-            {newArr.map((x, i) => <li key={i} onClick={()=>chooseCohort(x)}>{x.replace(/\d+/g, '')+ " " + x.replace(/\D/g,'')}<hr></hr></li>)}
+            {duplicateStudentArr.map((x, i) => <li key={i} onClick={()=>chooseCohort(x)}>{x.replace(/\d+/g, '')+ " " + x.replace(/\D/g,'')}<hr></hr></li>)}
         </ul>
         </div>
     )
 }
-
 
 export default Cohorts;

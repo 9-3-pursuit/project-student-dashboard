@@ -18,7 +18,7 @@ const Achievements = ({student}) => {
                <h5>{ (total >=100) ? (<Green total={total}/>) : ( (total >= 50) ? (<Yellow total={total}/>) : (<Red total={total}/>) ) }</h5>
             </div>
             <div>
-               <h3>Scores</h3>
+               <h3>Scores:</h3>
                <ul>
                   <li key={1}>Assignments: {(student.cohort.scores.assignments) * 100}%</li>
                   <li key={2}>Projects: {(student.cohort.scores.projects) * 100}%</li>
@@ -26,7 +26,7 @@ const Achievements = ({student}) => {
                </ul>
             </div> 
             <div>
-               <h3>Certifications</h3>
+               <h3>Certifications:</h3>
                <ul>
                   <li key={1}>Resume: {student.certifications.resume ? ("✅") : ("❌")} </li>
                   <li key={2}>LinkedIn: {student.certifications.linkedin ? ("✅") : ("❌")} </li>
@@ -39,10 +39,3 @@ const Achievements = ({student}) => {
 }
 
 export default Achievements;
-
-
-
-
-
-
-

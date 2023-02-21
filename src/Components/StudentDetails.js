@@ -11,7 +11,7 @@ function StudentDetails({student, id, info, setInfo}) {
 
     return (
         <div>
-            <a href='#' onClick={toggleShowMoreDetails}> {!showMore ? 'Show More...' : 'Show Less...'}</a>
+            <button className='showDetailsButton' onClick={toggleShowMoreDetails}> {!showMore ? 'Show More...' : 'Show Less...'}</button>
             {showMore ? (
         <div>
             <Achievements student={student} />

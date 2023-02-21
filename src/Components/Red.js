@@ -1,8 +1,8 @@
 function Red ({total}) {
     return (     
-      <red>
-        <h3>Percent of Goal Achieved: {total}%</h3>
-      </red>         
+      <div>
+        <h3> Percent of Goal Achieved: <span className='red'>{total}%</span> </h3>
+      </div>         
     )
 }
   

@@ -13,18 +13,13 @@ function App() {
   return (
     <div>
       <Header />
-
       <main>
         <Cohorts info={info}  setCohort={setCohort}/>
         <Students info={info} setInfo={setInfo} cohort={cohort}/>
       </main>
-      {/* <Footer/> */}
-      <h3>Footer Here</h3>
-
     </div>
 
   );
 }
-
 
 export default App;

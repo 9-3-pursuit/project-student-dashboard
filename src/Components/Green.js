@@ -1,8 +1,8 @@
 function Green ({total}) {
     return (     
-        <green>
-          <h3>Percent of Goal Achieved: {total}%</h3>
-        </green>        
+      <div>
+        <h3> Percent of Goal Achieved: <span className='green'>{total}%</span> </h3>
+      </div>        
     )
 }
   

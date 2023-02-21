@@ -1,4 +1,3 @@
-
 const Comments = ({id, info, setInfo, student}) => {
     
     function handleSubmit(event) {
@@ -14,21 +13,19 @@ const Comments = ({id, info, setInfo, student}) => {
 
         setInfo(newInfo)
         event.target.commenterName.value = ""
-        event.target.comment.value = ""
-        
-        
+        event.target.comment.value = ""              
     }
 
     return (
         <section>
-            <h2>1-on-1 Notes</h2>
-                <form onSubmit={handleSubmit}>
-                    <label htmlFor="commenterName" className="dblock">Commenter Name</label>
-                    <input type="text" id="commenterName" name="commenterName" className="dblock" required></input>
-                    <label htmlFor="comment" className="dblock">Comment</label>
-                    <input type="text" id="comment" name="comment" className="dblock" required></input>
-                    <button type="submit" >Add Note</button>               
-                </form>
+            <h2> 1-on-1 Notes 🗒 </h2> 
+            <form onSubmit={handleSubmit}>
+                <label htmlFor="commenterName" className="displayComment">Commenter Name</label>
+                <input type="text" id="commenterName" name="commenterName" className="displayComment" required></input>
+                <label htmlFor="comment" className="displayComment">Comment</label>
+                <input type="text" id="comment" name="comment" className="displayComment" required></input>
+                <button type="submit">Add Note</button>               
+            </form>
             <ul>
                 {student.notes.map((x, i) => <li key={i}> {x.commenter} says, {x.comment}</li>)}              
             </ul>
