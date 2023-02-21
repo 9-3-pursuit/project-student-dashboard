@@ -1,8 +1,6 @@
 import { React, useState } from "react";
 import studentData from "./data/data.json";
-import Cohorts from "./components/Cohorts";
-import Header from "./components/Header";
-import Students from "./components/Students";
+import { Header, Cohorts, Students } from "./components";
 
 import "./styles/App.css";
 
