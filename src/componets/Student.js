@@ -55,7 +55,7 @@ function Student ({student}) {
                 <h4>{student.names.preferredName} {student.names.middleName.charAt(0)}. {student.names.surname}</h4>
                 <p>{student.username}</p>
                 <p><span>Birthday:</span> {formatDOB(student)}</p>
-                <p className="showMore" onClick={() => updateShowMore()} >{showMore ? "Show Less..." : "Show More..." }</p>
+                <button className="showMoreButton" onClick={() => updateShowMore()} >{showMore ? "Show Less..." : "Show More..." }</button>
             </div>
         <div>{Object.values(student.certifications).every((certificate) => certificate) && student.codewars.current.total >= 600 ? <h4>On Track to Graduate</h4>: <h4>not on Track</h4>}</div>
         {showMore ? 
@@ -87,16 +87,13 @@ function Student ({student}) {
                         <div>
                             <form className="commentForm" onSubmit={onSubmit}>
                                 <label htmlFor="commenter">Commenter Name</label>
-                                <input id="commenter" name="commenter" type="text" value={newNotes.commenter} onChange={handleTextChange}/>
+                                <input id="commenter" name="commenter" type="text" placeholder="Enter your name" value={newNotes.commenter} onChange={handleTextChange}/>
                                 <label htmlFor="comment">Comment</label>
-                                <input id="comment" name="comment" type="text" value={newNotes.comment} onChange={handleTextChange}/>
-                                <button>Add Notes</button>
+                                <input id="comment" name="comment" type="text" placeholder="Enter your comment" value={newNotes.comment} onChange={handleTextChange}/>
+                                <button className="formButton" >Add Notes</button>
                             </form>
                         </div>
                         <ul>
-                            {/* {student.notes.map((comment, index) => {return (
-                                <li key={index}>{comment.commenter} says, "{comment.comment}"</li>
-                            )})} */}
                             {notes.map((comment, index) => {return (
                                 <li key={index}>{comment.commenter} says, "{comment.comment}"</li>
                             )})}

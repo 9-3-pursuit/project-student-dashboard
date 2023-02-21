@@ -2,10 +2,17 @@
     list-style: none;
     border-bottom: 2px solid green;
     margin: 15px 50px 5px 20px;
+    color: white
 }
 
 .cohortDiv ul li:hover {
-    color: blue;
+    color: black;
+    background-color: green;
     font-size: large;
+    box-shadow: 3px 3px black, -0.12em 0 .4em green;
 }
 
+.cohortTitle {
+    color: white;
+    margin-left: 55px
+}

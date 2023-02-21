@@ -18,6 +18,15 @@ img {
     display: grid;
 }
 
+input{
+    color: black;
+}
+
+input::placeholder {
+    color: black;
+    opacity: 1;
+}
+
 .info {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -46,16 +55,25 @@ p {
 }
 
 .commentForm {
-    border: 1px solid black;
+    border: 1px solid green;
     display: grid;
     grid-template-columns: 1fr 2fr;
     margin: 20px;
     padding: 20px;
     grid-gap: 10px;
+    box-shadow: 3px 3px black, -0.5em 0 .4em green;
 }
 
-button {
+.showMoreButton {
     background-color: green;
-    color: white;
+    color: black;
+    box-shadow: 3px 3px black, -0.25em 0 .4em green;
+    margin-bottom: 20px;
+}
+
+.formButton {
+    background-color: green;
+    color: black;
     grid-column: 2 / span 1;
+    box-shadow: 3px 3px black, -0.25em 0 .4em green;
 }

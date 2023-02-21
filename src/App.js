@@ -18,7 +18,7 @@ function App() {
   }
 
   return (
-    <div>
+    <div className="mainDiv">
       <h1 className="header" >Student Dashboard</h1>
       <main className="studentDashboard">
         <Cohorts studentsData={studentsData} onSelectedCohort={selectedCohort}/>

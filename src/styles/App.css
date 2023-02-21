@@ -8,5 +8,10 @@
     background-color: green;
     padding: 4%;
     margin-top: 0%;
+    color: black;
+}
+
+.mainDiv {
+    background-color: rgb(15, 15, 15);
     color: white;
 }
