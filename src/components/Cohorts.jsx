@@ -4,14 +4,16 @@ const Cohorts = ({ studentData, handleFilterStudentsByCohortClick }) => {
   const organizedUniqueCohorts = extractAndOrganizeUniqueCohorts(studentData);
 
   return (
-    <div className="cohorts-container">
-      <h2>Choose a Class by Start Date</h2>
-      <ul>
-        <li onClick={() => handleFilterStudentsByCohortClick("all")}>{"All Students"}</li>
+    <div className="cohorts-container col-span-2 col-end-3 px-5 bg-gradient-to-r from-teal-200">
+      <h2 className="text-3xl py-3 border-b-4 border-slate-600">Choose Cohort</h2>
+      <ul className="py-4">
+        <li className="text-xl py-2 border-b-2 border-zinc-600 hover:text-3xl hover:font-bold hover:border-b-4 hover:text-sky-700" onClick={() => handleFilterStudentsByCohortClick("all")}>
+          <span>{"All Students"}</span>
+        </li>
         {organizedUniqueCohorts.map((cohort, index) => {
           return (
-            <li key={index} onClick={() => handleFilterStudentsByCohortClick(cohort)}>
-              {cohort}
+            <li className="text-xl py-2 border-b-2 border-zinc-600 hover:text-3xl hover:font-bold hover:border-b-4 hover:text-sky-700" key={index} onClick={() => handleFilterStudentsByCohortClick(cohort)}>
+              <span>{cohort}</span>
             </li>
           );
         })}

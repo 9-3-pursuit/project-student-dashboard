@@ -9,9 +9,11 @@ const Header = () => {
   };
 
   return (
-    <header>
+    <header className="grid grid-cols-2 bg-icecold h-20 text-center">
       <h1 className="text-3xl">Student Dashboard</h1>
-      <button onClick={toggleDarkAndLightMode}>{mode ? "Dark" : "Light"}</button>
+      <button className="bg-cyan-300" onClick={toggleDarkAndLightMode}>
+        {mode ? "Dark" : "Light"}
+      </button>
     </header>
   );
 };

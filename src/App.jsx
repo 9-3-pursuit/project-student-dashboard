@@ -27,9 +27,9 @@ const App = () => {
   };
 
   return (
-    <div>
+    <div className="grid">
       <Header />
-      <div>
+      <div className="grid grid-cols-8">
         <Cohorts studentData={studentData} handleFilterStudentsByCohortClick={handleFilterStudentsByCohortClick} />
         <Students studentDataClone={studentDataClone} addNewNoteToStudent={addNewNoteToStudent} />
       </div>
