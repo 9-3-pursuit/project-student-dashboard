@@ -2,6 +2,7 @@ import "../styles/Cohorts.css";
 
 const Cohorts = ({ studentData, handleFilterStudentsByCohortClick }) => {
   const organizedUniqueCohorts = extractAndOrganizeUniqueCohorts(studentData);
+
   return (
     <div className="cohorts-container">
       <h2>Choose a Class by Start Date</h2>

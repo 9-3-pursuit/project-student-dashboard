@@ -10,7 +10,7 @@ const Header = () => {
 
   return (
     <header>
-      <h1>Student Dashboard</h1>
+      <h1 className="text-3xl">Student Dashboard</h1>
       <button onClick={toggleDarkAndLightMode}>{mode ? "Dark" : "Light"}</button>
     </header>
   );
