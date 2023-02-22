@@ -1,4 +1,5 @@
-import "./StudentList.css"
+import "./StudentList.css";
+import OneOnOneForm from "./OneOnOneform";
 import { useState } from "react";
 import { FcCheckmark } from "react-icons/fc";
 import { HiXMark } from "react-icons/hi2";
@@ -6,12 +7,18 @@ import { HiXMark } from "react-icons/hi2";
 
 export default function Students({ student }) {
     const [visible, setVisibility] = useState(false);
+    const [moreLess, setMoreLess] = useState("More")
     const formatBirthday = new Intl.DateTimeFormat("en", {
         dateStyle: "long"
     })
 
     function toggleVisibility() {
         setVisibility(!visible);
+        if (moreLess === "More") {
+            setMoreLess("Less")
+        } else {
+            setMoreLess("More")
+        }
     }
 
 
@@ -25,7 +32,7 @@ export default function Students({ student }) {
                 <p>{student.username}</p>
                 <p><span className="birthdaySpan">Birthday:</span> {formatBirthday.format(birthday)}</p>
             </div>
-            <p className="showMore" onClick={toggleVisibility}>Show More...</p>
+            <p className="showMore" onClick={toggleVisibility}>Show {moreLess}...</p>
            {visible && 
             <div className="studentDetails hide" >
                 <div>
@@ -47,6 +54,11 @@ export default function Students({ student }) {
                     <p><span>LinkedIn:</span> {student.certifications.linkedin ? <FcCheckmark className="check" /> : <HiXMark className="x" />}</p>
                     <p><span>Mock Interview:</span> {student.certifications.github ? <FcCheckmark className="check" /> : <HiXMark className="x" />}</p>
                     <p><span>GitHub:</span> {student.certifications.mockInterview ? <FcCheckmark className="check" /> : <HiXMark className="x" />}</p>
+                </div>
+                <div>
+                    <OneOnOneForm 
+                        student={student}
+                    />
                 </div>
             </div>}
         </div>
