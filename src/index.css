@@ -99,7 +99,7 @@ table {
 }
 
 #root {
-  height: 100vh;
+  font-family: "Courier New", Courier, monospace;
 }
 
 /* Layout */
@@ -107,4 +107,10 @@ table {
 main {
   display: grid;
   grid-template-columns: auto 1fr;
+}
+
+@media screen and (max-width: 475px) {
+  main {
+    display: block;
+  }
 }

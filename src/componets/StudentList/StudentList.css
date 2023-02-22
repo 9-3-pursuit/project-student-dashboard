@@ -14,6 +14,8 @@
 
 .single-student {
   border: rgb(124, 175, 147) 0.1rem solid;
+  border-radius: 1rem;
+  box-shadow: 0 0 1rem rgba(121, 121, 121, 0.2);
   margin-bottom: 1rem;
   padding: 2rem;
   display: grid;
@@ -115,7 +117,6 @@ form {
 }
 
 .one-on-one input[type="submit"]:hover {
-  padding: 0.5rem;
   border: rgb(124, 175, 147) 1px solid;
   color: rgb(124, 175, 147);
   background-color: white;
@@ -123,4 +124,43 @@ form {
 
 .one-on-one ul {
   margin-top: 1.5rem;
+  width: 100%;
+  overflow-wrap: break-word;
+}
+
+@media screen and (max-width: 475px) {
+  .single-student {
+    display: block;
+  }
+  .stats-section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .stats-section div {
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
+
+  .one-on-one form {
+    margin: 0;
+    margin-top: 1rem;
+    padding: 0;
+    border: none;
+  }
+
+  .one-on-one {
+    padding: 0;
+  }
+
+  .one-on-one input[type="text"] {
+    margin: 0.5rem 0;
+    padding: 0;
+  }
+
+  .one-on-one textarea {
+    margin: 0.5rem 0;
+    resize: vertical;
+    padding: 0;
+  }
 }
