@@ -2,7 +2,7 @@ import { useState } from "react"
 import Achievements from './Achievements';
 import UserComments from './UserComments';
 
-function StudentDetails({student, id, info, setInfo}) {
+const StudentDetails = ({student, id, info, setInfo}) => {
     const [showMore, setShowMore] = useState(false);
 
     function toggleShowMoreDetails() {

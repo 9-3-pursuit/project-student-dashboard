@@ -1,29 +1,34 @@
+import { useState } from "react";
+
 const Comments = ({id, info, setInfo, student}) => {
-    
+ 
+    const [commenter, setCommenter] = useState('')
+    const [comment, setComment] = useState('')
+
     function handleSubmit(event) {
         event.preventDefault();
         
         const newInfo = info.map((stud)=> {
             if (stud.id === id) {
-                stud.notes = [...stud.notes,{commenter: event.target.commenterName.value, comment:event.target.comment.value}]
+                stud.notes = [...stud.notes,{commenter: commenter, comment: comment}]
                 
             }
             return stud
         })
 
         setInfo(newInfo)
-        event.target.commenterName.value = ""
-        event.target.comment.value = ""              
+        setCommenter('')
+        setComment('')              
     }
 
     return (
         <section>
             <h2> 1-on-1 Notes 🗒 </h2> 
             <form onSubmit={handleSubmit}>
-                <label htmlFor="commenterName" className="displayComment">Commenter Name</label>
-                <input type="text" id="commenterName" name="commenterName" className="displayComment" required></input>
+                <label htmlFor="commenter" className="displayComment">Commenter Name</label>
+                <input value={commenter}  onChange={(e) => setCommenter(e.target.value)}  type="text" id="commenter" name="commenter" className="displayComment" required></input>
                 <label htmlFor="comment" className="displayComment">Comment</label>
-                <input type="text" id="comment" name="comment" className="displayComment" required></input>
+                <input value={comment}  onChange={(e)=> setComment(e.target.value)} type="text" id="comment" name="comment" className="displayComment" required></input>
                 <button type="submit">Add Note</button>               
             </form>
             <ul>

@@ -32,7 +32,7 @@ main {
 
 .cohorts li:hover {
     cursor: pointer;
-    color: rgb(101, 79, 212);
+    color:yellow;
 }
 
 .students { 
