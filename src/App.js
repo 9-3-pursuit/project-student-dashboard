@@ -1,3 +1,5 @@
+
+import React from "react";
 import "./App.css";
 function App() {
   return (
@@ -5,6 +7,7 @@ function App() {
 <div className="header">
   <h1>Student Dashboard</h1>
 </div>
+<div className="body">
 <div className="classCohort">
   <h2>Choose a Class by Start Date</h2>
   <li>All Students</li>
@@ -24,8 +27,13 @@ function App() {
   <li>Summer 2025</li>
   <hr></hr>
   <li>Spring 2025</li>
-</div>
-</div>
+  </div>
+  <div className="students">
+          <h2>All Students</h2>
+          <h3>Total Students:</h3>
+          </div>
+          </div>
+          </div>
 );
   }
 

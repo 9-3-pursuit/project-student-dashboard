@@ -1,7 +1,12 @@
-.all {
-  display: grid;
-  
+ .all {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  margin: 0 auto;
+}
+
+.body {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  padding-top: 30px;
 }
 
 .header {
@@ -10,20 +15,19 @@
   padding: 30px;
   text-align: center;
   font-size: larger;
-  margin: 0;
   width: 100%;
 }
 
 .classCohort {
-  border: 20px;
-  padding: 20px;
+  border: 5px solid;
+  
   
 }
 
 li {
-  list-style-type: none;
-  font-size: x-large;
+  text-align: left;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
 }
 
 hr {
@@ -32,3 +36,10 @@ hr {
   border-top: 1px solid red;
 
 }
+
+.students {
+  border: 5px solid;
+  border-color: aqua;
+  margin-left: 100px;
+  padding-left: 50px;
+} 
