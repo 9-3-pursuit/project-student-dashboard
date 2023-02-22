@@ -1,6 +1,20 @@
-export default function StatFromScores({ scoreInfo, SectionTitle }) {
+export default function StatsLister({ title, stats }) {
+  const statsFromScores = Object.entries(stats).map((stat) => (
+    <StatFromScores scoreInfo={stat} SectionTitle={title} />
+  ));
+
+  return (
+    <div>
+      <h3>{title}</h3>
+      {statsFromScores}
+    </div>
+  );
+}
+
+function StatFromScores({ scoreInfo, SectionTitle }) {
   const category = scoreInfo[0],
     studentScore = scoreInfo[1],
+    //only 'percentage of goal completed' contains the words "completed"
     className = category.includes("completed")
       ? generatesTag(studentScore)
       : "";
