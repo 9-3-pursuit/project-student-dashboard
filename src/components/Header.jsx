@@ -1,5 +1,4 @@
 import "../styles/Header.css";
-import { useState } from "react";
 
 const Header = ({ handleDarkModeClick, darkMode }) => {
   console.log(`This is from Header: ${darkMode}`);
