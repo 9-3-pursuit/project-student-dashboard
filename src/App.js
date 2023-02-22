@@ -2,12 +2,14 @@ import Header from "./Componets/Header/Header";
 import CohortList from "./Componets/CohortList/CohortList";
 import StudentList from "./Componets/StudentList/StudentList";
 import { useState } from "react";
-import { studentData } from "./data/data";
+import data from "./data/data.json";
+
+console.log(data);
 
 export default function App() {
   const OnScreenInitalState = {
     filter: "All Students",
-    students: studentData,
+    students: data,
   };
   const [studentsOnScreen, setStudentsOnScreen] = useState(OnScreenInitalState);
 
@@ -15,7 +17,7 @@ export default function App() {
     if (newCohortCode === "All Students") {
       setStudentsOnScreen(OnScreenInitalState);
     } else {
-      const updatedStudentList = studentData.filter((student) => {
+      const updatedStudentList = data.filter((student) => {
         return student.cohort.cohortCode === newCohortCode;
       });
       setStudentsOnScreen({

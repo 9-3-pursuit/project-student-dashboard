@@ -1,9 +1,9 @@
 import "./CohortList.css";
-import { studentData } from "../../data/data";
+import data from "../../data/data";
 import SingleCohort from "./SingleCohort";
 
 export default function CohortList({ handleClick }) {
-  const uniqueCohortCodes = studentData.reduce(getUniqueCohortCodes, []),
+  const uniqueCohortCodes = data.reduce(getUniqueCohortCodes, []),
     sortedCohortCodes = sortsCohortCodes(uniqueCohortCodes),
     AllCohortOptions = ["All Students", ...sortedCohortCodes];
 
