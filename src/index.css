@@ -1,0 +1,24 @@
+.header {
+    background-color: blue;
+    height: 100px;
+    text-align: center;
+    font-size: 30px;
+}
+.students {
+    width: 60%;
+    height: fit-content;
+    grid-template-rows: auto;
+    margin-left: auto;
+    margin-right: 0;
+}
+.studentProfile {
+    border: 2px solid blue
+}
+#birthday span {
+    color: blue;
+}
+#totalStudents span {
+    color: blue;
+}
+    
+    
