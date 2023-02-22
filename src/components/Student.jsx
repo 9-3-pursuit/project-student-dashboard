@@ -46,6 +46,13 @@ const Student = ({ student, addNewNoteToStudent, darkMode }) => {
     return allCertificationsAreValid.every((cert) => cert) && codewarScoreIsHighEnough;
   };
 
+  const goalPercentageStyled = () => {
+    const studentGoal = Math.round((student.codewars.current.total / student.codewars.goal.total) * 100);
+    if (studentGoal >= 100) {
+      return <span className="font-extrabold text-emerald-600 text-lg">{studentGoal}</span>;
+    }
+  };
+
   return (
     <div className={`${toggle ? "h-96 student-info border-2 border-emerald-500 p-1 grid grid-rows-3 mt-1 overflow-auto bg-slate-300" : "max-h-96 student-info border-2 border-emerald-500 p-1  grid grid-rows-2 mt-1 bg-slate-300"}`}>
       <div className={`border-2 border-emerald-400 my-1 ${toggle ? "h-40 grid grid-cols-3" : "h-32px student-info-main grid grid-cols-3"}`}>
@@ -60,7 +67,7 @@ const Student = ({ student, addNewNoteToStudent, darkMode }) => {
         </div>
         <div className="right-side">{isOnTrackToGraduate() ? "On Track To Graduate" : "Not On Track To Graduate"}</div>
       </div>
-      <div className={`h-7 flex items-center justify-center mt-8 ${toggle && "mt-16"}`}>
+      <div className={`h-7 flex items-center justify-center mt-8 ${toggle && "mt-14 mb-5"}`}>
         <a
           href="#_"
           onClick={() => handleShowMoreStudentInfo()}
@@ -85,7 +92,7 @@ const Student = ({ student, addNewNoteToStudent, darkMode }) => {
                 <span className="font-bold">Goal:</span> {student.codewars.goal.total}
               </p>
               <p>
-                <span className="font-bold">Percent of Goal Achieved:</span> {Math.round((student.codewars.current.total / student.codewars.goal.total) * 100)}%
+                <span className="font-bold">Percent of Goal Achieved:</span> {goalPercentageStyled()}%
               </p>
             </div>
             <div className="student-extra-middle">
