@@ -41,12 +41,12 @@ const Student = ({ student, addNewNoteToStudent }) => {
   const isOnTrackToGraduate = () => {
     const allCertificationsAreValid = Object.values(student.certifications);
     const codewarScoreIsHighEnough = student.codewars.current.total > 600;
-    return allCertificationsAreValid && codewarScoreIsHighEnough;
+    return allCertificationsAreValid.every((cert) => cert) && codewarScoreIsHighEnough;
   };
 
   return (
-    <div className="h-30 student-info border-2 border-emerald-500 p-1">
-      <div className="student-info-main grid grid-cols-3">
+    <div className={`${toggle ? "h-96 student-info border-2 border-emerald-500 p-1 grid grid-rows-3 mt-1 overflow-auto bg-slate-300" : "max-h-96 student-info border-2 border-emerald-500 p-1  grid grid-rows-2 mt-1 bg-slate-300"}`}>
+      <div className={`${toggle ? "h-40 grid grid-cols-3" : "h-32px student-info-main grid grid-cols-3"}`}>
         <div className="left-side">{/* <img src={student.profilePhoto} alt={student.username} /> */}</div>
         <div className="middle-side">
           <h2>
@@ -58,20 +58,20 @@ const Student = ({ student, addNewNoteToStudent }) => {
         </div>
         <div className="right-side">{isOnTrackToGraduate() ? "On Track To Graduate" : "Not On Track To Graduate"}</div>
       </div>
-      <br />
-      <a
-        href="#_"
-        onClick={() => handleShowMoreStudentInfo()}
-        className="relative rounded px-5 py-2.5 overflow-hidden group bg-green-500 hover:bg-gradient-to-r hover:from-green-500 hover:to-green-400 text-white hover:ring-2 hover:ring-offset-2 hover:ring-green-400 transition-all ease-out duration-300"
-      >
-        <span class="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
-        <span class="relative">{toggle ? "Show Less..." : "Show More..."}</span>
-      </a>
-      <br />
+      <div className="h-7 flex items-center justify-center mt-8">
+        <a
+          href="#_"
+          onClick={() => handleShowMoreStudentInfo()}
+          className="relative rounded px-5 py-2.5 overflow-hidden group bg-green-500 hover:bg-gradient-to-r hover:from-green-500 hover:to-green-400 text-white hover:ring-2 hover:ring-offset-2 hover:ring-green-400 transition-all ease-out duration-300"
+        >
+          <span className="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
+          <span className="relative">{toggle ? "Show Less..." : "Show More..."}</span>
+        </a>
+      </div>
       {toggle ? (
-        <div className="extra-student-info">
-          <div className="extra-student-scores">
-            <div className="student-extra-left">
+        <div className="h-full extra-student-info grid grid-row-[50%,50%] top-full">
+          <div className="extra-student-scores grid grid-cols-[33%,33%,33%]">
+            <div className="student-extra-left items-center justify-center">
               <h3>CodeWars:</h3>
               <p>Current Total: {student.codewars.current.total}</p>
               <p>Last Week: {student.codewars.current.lastWeek}</p>
@@ -86,14 +86,14 @@ const Student = ({ student, addNewNoteToStudent }) => {
             </div>
             <div className="student-extra-right">
               <h3>Certifications: </h3>
-              <p>Resume: {student.certifications.resume.toString()}</p>
-              <p>LinkedIn: {student.certifications.linkedin.toString()}</p>
-              <p>Mock Interview: {student.certifications.github.toString()}</p>
-              <p>GitHub: {student.certifications.mockInterview.toString()}</p>
+              <p>Resume: {student.certifications.resume ? "✅" : "❌"}</p>
+              <p>LinkedIn: {student.certifications.linkedin ? "✅" : "❌"}</p>
+              <p>Mock Interview: {student.certifications.mockInterview ? "✅" : "❌"}</p>
+              <p>GitHub: {student.certifications.github ? "✅" : "❌"}</p>
             </div>
           </div>
-          <div className="student-notes">
-            <h3>1-on-1 Notes</h3>
+          <div className="student-notes border-2 border-emerald-400">
+            <h3 className="text-center py-2">1-on-1 Notes</h3>
             <div className="student-notes-inner-container">
               <div className="form-container">
                 <form onSubmit={handleSubmit}>
@@ -108,19 +108,27 @@ const Student = ({ student, addNewNoteToStudent }) => {
                     <input type="text" id="comment" name="comment" value={studentNoteForm.comment} onChange={handleTextChange} />
                   </label>
                   <br />
-                  <input type="submit" value="Add Note" />
+                  <div className="py-5">
+                    <button class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-2 px-4 rounded-full" type="submit">
+                      Button
+                    </button>
+                  </div>
                 </form>
               </div>
-              <div className="student-notes-lists">
-                <ul>
-                  {student.notes.map((note) => {
-                    return (
-                      <li>
-                        {note.commenter} says, {note.comment}
-                      </li>
-                    );
-                  })}
-                </ul>
+              <div className="student-notes-lists py-4 text-center bg-neutral-500">
+                {!student.notes.length ? (
+                  <p>No notes yet!</p>
+                ) : (
+                  <ul className="text-gray-50">
+                    {student.notes.map((note) => {
+                      return (
+                        <li className="border-solid border-2 border-black">
+                          {note.commenter} says, {note.comment}
+                        </li>
+                      );
+                    })}
+                  </ul>
+                )}
               </div>
             </div>
           </div>
