@@ -45,7 +45,7 @@ const Student = ({ student, addNewNoteToStudent }) => {
   };
 
   return (
-    <div className="student-info border-2 border-emerald-500 p-1">
+    <div className="h-full student-info border-2 border-emerald-500 p-1">
       <div className="student-info-main grid grid-cols-3">
         <div className="left-side">{/* <img src={student.profilePhoto} alt={student.username} /> */}</div>
         <div className="middle-side">
@@ -59,13 +59,12 @@ const Student = ({ student, addNewNoteToStudent }) => {
         <div className="right-side">{isOnTrackToGraduate() ? "On Track To Graduate" : "Not On Track To Graduate"}</div>
       </div>
       <a
+        onClick={() => handleShowMoreStudentInfo()}
         href="#_"
-        class="rounded relative inline-flex group items-center justify-center px-3.5 py-2 m-1 cursor-pointer border-b-4 border-l-2 active:border-purple-600 active:shadow-none shadow-lg bg-gradient-to-tr from-purple-600 to-purple-500 border-purple-700 text-white"
+        className="rounded inline-flex group items-center justify-center px-3.5 py-2 m-1 cursor-pointer border-b-4 border-l-2 active:border-purple-600 active:shadow-none shadow-lg bg-gradient-to-tr from-purple-600 to-purple-500 border-purple-700 text-white"
       >
         <span className="absolute w-0 h-0 transition-all duration-300 ease-out bg-white rounded-full group-hover:w-32 group-hover:h-32 opacity-10"></span>
-        <span className="relative" onClick={() => handleShowMoreStudentInfo()}>
-          {toggle ? "Show Less..." : "Show More..."}
-        </span>
+        <span className="">{toggle ? "Show Less..." : "Show More..."}</span>
       </a>
       {/* <p onClick={() => handleShowMoreStudentInfo()}>{toggle ? "Show Less..." : "Show More..."}</p> */}
 

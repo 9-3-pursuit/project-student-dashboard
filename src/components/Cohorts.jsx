@@ -29,10 +29,19 @@ const extractAndOrganizeUniqueCohorts = (studentData) => {
 
   const seasonOrder = ["Winter", "Fall", "Summer", "Spring"];
 
+  // pattern not a directive to give part of a string - description
+  // not an action is just data
+  // expressing a pattern
   const regexp = /(.+)(\d{4})/;
+  // 4 digits preceded by at least one character
+
+  // ! this is exec() is doing
+  // capturing group the first (pattern)
+  // two capturing groups in line 33
 
   const organizedCohortsBySeasonAndYear = uniqueCohortCodes
     .map((cohort) => {
+      // splits it
       const [season, year] = regexp.exec(cohort).slice(1);
       return [season, year, seasonOrder.indexOf(season)];
     })
@@ -44,4 +53,5 @@ const extractAndOrganizeUniqueCohorts = (studentData) => {
   return organizedCohortsBySeasonAndYear;
 };
 
+// a regular expression is just a pattern that could appear in a string
 export default Cohorts;

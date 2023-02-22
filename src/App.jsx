@@ -8,6 +8,9 @@ const App = () => {
   const [studentDataClone, setStudentDataClone] = useState(studentData);
 
   const addNewNoteToStudent = (studentID, newNote) => {
+    // avoid state mutation / refactor
+    // how much of the app is rendering
+    // react profiler - chrome dev tools
     const clonedStudentDataForNoteUpdate = studentData;
     const studentFoundInClonedStudentData = clonedStudentDataForNoteUpdate.find((student) => studentID === student.id);
     studentFoundInClonedStudentData.notes.push(newNote);
@@ -27,11 +30,15 @@ const App = () => {
   };
 
   return (
-    <div className="grid">
-      <Header />
-      <div className="grid grid-cols-8">
-        <Cohorts studentData={studentData} handleFilterStudentsByCohortClick={handleFilterStudentsByCohortClick} />
-        <Students studentDataClone={studentDataClone} addNewNoteToStudent={addNewNoteToStudent} />
+    <div className="max-h-screen grid grid-flow-row">
+      <div className="row-span-1 h-full">
+        <Header />
+      </div>
+      <div className="row-span-1 h-full">
+        <div className="grid grid-cols-8 min-h-screen">
+          <Cohorts studentData={studentData} handleFilterStudentsByCohortClick={handleFilterStudentsByCohortClick} />
+          <Students studentDataClone={studentDataClone} addNewNoteToStudent={addNewNoteToStudent} />
+        </div>
       </div>
     </div>
   );
