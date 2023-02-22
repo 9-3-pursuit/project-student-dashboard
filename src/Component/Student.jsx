@@ -1,6 +1,12 @@
 import React from 'react';
+import { useState } from 'react';
+import Comments from './Comments';
 
-const Student = ({ student }) => {
+const Student = ({ student}) => {
+
+  
+
+  const [comments, setComments] = useState('');
   return (
     <div>
       <p>Codewars Current Total: {student.codewars.current.total}</p>
@@ -29,6 +35,7 @@ const Student = ({ student }) => {
           <li>Assessments: {student.cohort.scores.assessments}</li>
         </ul>
       </ul>
+      <Comments comments = {comments} setComments ={setComments} />
     </div>
   );
 };
