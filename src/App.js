@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./styles/App.css"
 import studentsData from "./data/data.json";
-import Students from "./componets/Students";
+import Student from "./componets/Student";
 import Cohorts from "./componets/Cohorts";
 
 function App() {
@@ -22,7 +22,15 @@ function App() {
       <h1 className="header" >Student Dashboard</h1>
       <main className="studentDashboard">
         <Cohorts studentsData={studentsData} onSelectedCohort={selectedCohort}/>
-        <Students updatedStudentsData={updatedStudentsData}/>
+        <div>
+            <div>
+            <h2 className="studentsTitle" >{updatedStudentsData.length === 250 ? "All Students": /(.+)(\d{4})/.exec(updatedStudentsData[0].cohort.cohortCode).slice(1).join(" ")}</h2>
+            <h4 className="studentsTitle">Total Students: {updatedStudentsData.length}</h4>
+            {updatedStudentsData.map((student, index) => {return(
+                <Student student={student} index={index}/>
+            )})}
+            </div>
+        </div>
       </main>
     </div>
   );

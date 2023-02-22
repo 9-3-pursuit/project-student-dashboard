@@ -1,14 +1,17 @@
-import { v1 as generateUniqueID } from "uuid";
 import { useState } from "react";
 import "../styles/Student.css"
 
-function Student ({student}) {
-    const [showMore, setShowMore] = useState(false);
-    const [notes, setNotes] = useState ([...student.notes]); 
+
+function Student ({student, index}) {
+    const [showMore, setShowMore] = useState({
+        boolean: false 
+    })
+    const [notes, setNotes] = useState ([]); 
     const [newNotes, setNewNotes] = useState({
         "commenter": "",
         "comment": ""
     })
+
 
     const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
     function formatDOB (student) {
@@ -16,8 +19,13 @@ function Student ({student}) {
         return (`${months[parseInt(splitStudent[0]-1)]} ${splitStudent[1]}, ${splitStudent[2]}`);
     }
 
-    function updateShowMore () {
-        setShowMore(!showMore);
+    function updateShowMore (studentId) {
+        if (showMore.boolean === false) {
+            setShowMore({boolean: true, [studentId]: true});
+        }
+        if (showMore.boolean === true) {
+            setShowMore({boolean: false, [studentId]: false});
+        }
     }
 
     function handleTextChange (event) {
@@ -27,21 +35,15 @@ function Student ({student}) {
         })
     }
 
-    function onSubmit (event) {
+    function onSubmit (event, studentId) {
         event.preventDefault();
-
-        if (notes.length === 0) {
-            setNotes([{
-                "commenter": newNotes.commenter,
-                "comment": newNotes.comment
-              }])
-        } else {
-            setNotes([...notes, {
-                "commenter": newNotes.commenter,
-                "comment": newNotes.comment
-              }])
-        }
-        console.log(notes)
+      
+        const notesObj = {
+            [studentId]: studentId,
+            "commenter": newNotes.commenter,
+            "comment": newNotes.comment
+            }
+        setNotes([...notes, notesObj])
         setNewNotes({
             "commenter": "",
             "comment": ""
@@ -49,16 +51,16 @@ function Student ({student}) {
     }
 
     return (
-        <div className="studentCard" >
+        <div key={index} className="studentCard" >
         <div ><img src={student.profilePhoto} alt={student.id}/></div>
-            <div key={generateUniqueID()}>
+            <div>
                 <h4>{student.names.preferredName} {student.names.middleName.charAt(0)}. {student.names.surname}</h4>
                 <p>{student.username}</p>
                 <p><span>Birthday:</span> {formatDOB(student)}</p>
-                <button className="showMoreButton" onClick={() => updateShowMore()} >{showMore ? "Show Less..." : "Show More..." }</button>
+                <button className="showMoreButton" onClick={() => updateShowMore(student.id)} >{showMore.boolean && showMore[student.id] ? "Show Less..." : "Show More..." }</button>
             </div>
         <div>{Object.values(student.certifications).every((certificate) => certificate) && student.codewars.current.total >= 600 ? <h4>On Track to Graduate</h4>: <h4>not on Track</h4>}</div>
-        {showMore ? 
+        {showMore.boolean && showMore[student.id] ? 
                 <div className="moreInfo">
                     <div className="info">
                         <div>
@@ -85,7 +87,7 @@ function Student ({student}) {
                     <div className="comments">
                         <h4>1-on-1 Notes</h4>
                         <div>
-                            <form className="commentForm" onSubmit={onSubmit}>
+                            <form className="commentForm" onSubmit={(event)=>onSubmit(event, student.id)}>
                                 <label htmlFor="commenter">Commenter Name</label>
                                 <input id="commenter" name="commenter" type="text" placeholder="Enter your name" value={newNotes.commenter} onChange={handleTextChange}/>
                                 <label htmlFor="comment">Comment</label>
@@ -94,7 +96,10 @@ function Student ({student}) {
                             </form>
                         </div>
                         <ul>
-                            {notes.map((comment, index) => {return (
+                            {student.notes.map((comment, index) => {return (
+                                <li key={index}>{comment.commenter} says, "{comment.comment}"</li>
+                            )})}
+                            {notes.filter((note)=> student.id === note[student.id]).map((comment, index) => {return (
                                 <li key={index}>{comment.commenter} says, "{comment.comment}"</li>
                             )})}
                         </ul>
@@ -105,4 +110,4 @@ function Student ({student}) {
     )
 }
 
-export default Student
+export default Student;
