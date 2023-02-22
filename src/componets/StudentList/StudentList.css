@@ -3,9 +3,11 @@
   padding: 0 3rem;
 }
 
-.student-list img {
+/* Single Student */
+
+.single-student img {
   height: 10rem;
-  width: auto;
+  width: 10rem;
   border-radius: 0.3rem;
   grid-row: 1 /3;
 }
@@ -29,4 +31,96 @@
 .single-student .on-track {
   border: rgb(124, 175, 147) 0.1rem solid;
   padding: 1.5rem 2rem;
+}
+
+/* Stats Section */
+
+.stats-section {
+  grid-column: 1/4;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.stats-section div {
+  margin: 0 auto;
+}
+
+.stats-section p {
+  color: rgb(124, 175, 147);
+}
+
+.stats-section .show-green {
+  color: green;
+}
+.stats-section .show-yellow {
+  color: rgb(186, 186, 15);
+}
+.stats-section .show-red {
+  color: rgb(163, 0, 0);
+}
+
+/* One on One Section */
+
+.one-on-one {
+  grid-column: 1 / 4;
+  border-top: rgb(124, 175, 147) solid;
+  padding: 2rem 10rem 0;
+}
+
+.one-on-one,
+form {
+  display: flex;
+  flex-direction: column;
+  width: max-content;
+  margin: 0 auto;
+}
+
+.one-on-one form {
+  border: black 0.5px solid;
+  padding: 2rem;
+}
+
+.one-on-one input[type="text"] {
+  margin: 0.5rem 0 0.5rem 0.5rem;
+  padding: 0.2rem 0.3rem;
+}
+
+.one-on-one textarea {
+  margin: 0.5rem 0;
+  resize: vertical;
+  padding: 0.5rem;
+}
+
+.one-on-one input[type="text"]:focus,
+.one-on-one input[type="text"]:active,
+.one-on-one textarea:focus,
+.one-on-one textarea:active {
+  outline: none;
+  border: rgb(124, 175, 147) solid 1px;
+}
+
+.one-on-one input[type="submit"],
+.one-on-one h3 {
+  width: fit-content;
+  align-self: center;
+  cursor: pointer;
+  border: none;
+}
+
+.one-on-one input[type="submit"] {
+  padding: 0.5rem;
+  background-color: rgb(124, 175, 147);
+  color: white;
+  border: white 1px solid;
+}
+
+.one-on-one input[type="submit"]:hover {
+  padding: 0.5rem;
+  border: rgb(124, 175, 147) 1px solid;
+  color: rgb(124, 175, 147);
+  background-color: white;
+}
+
+.one-on-one ul {
+  margin-top: 1.5rem;
 }
