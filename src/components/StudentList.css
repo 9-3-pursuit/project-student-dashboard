@@ -29,7 +29,7 @@ h3 {
     margin: 5px 0 0 0;
 }
 
-.birthdaySpan {
+span {
     color: #5c946f;
     font-weight: 600;
 }
@@ -45,11 +45,19 @@ h3 {
 svg.x {
     color: red;
     stroke-width: 3px;
+    position: relative;
+    top: 3px;
 }
 
 svg.check {
     color: green;
     stroke-width: 3px;
+}
+
+
+.studentDetails {
+    display: grid;
+    grid-template-columns: repeat(3, 280px);
 }
 
 .hide {

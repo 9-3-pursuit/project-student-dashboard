@@ -11,12 +11,12 @@ export default function Students({ currentCohortArray }) {
     function showMoreOrLess(event) {
         if (event.target.textContent === "Show More...") {
             event.target.textContent = "Show Less...";
-            event.target.nextSibling.className = "show";
+            event.target.nextSibling.className = "studentDetails show";
 
 
         } else {
             event.target.textContent = "Show More...";
-            event.target.nextSibling.className = "hide";
+            event.target.nextSibling.className = "studentDetails hide";
         }
     }
    
@@ -33,7 +33,7 @@ export default function Students({ currentCohortArray }) {
                     </div>
                     <p className="showMore" onClick={showMoreOrLess}>Show More...</p>
                 
-                    <div className="studentDetails hide">
+                    <div className="studentDetails hide" >
                         <div>
                             <h3>Codewars:</h3>
                             <p><span>Current Total:</span> {student.codewars.current.total}</p>
@@ -43,9 +43,9 @@ export default function Students({ currentCohortArray }) {
                         </div>
                         <div>
                             <h3>Scores:</h3>
-                            <p><span>Assignments:</span> {student.cohort.scores.assignments}</p>
-                            <p><span>Projects:</span> {student.cohort.scores.projects}</p>
-                            <p><span>Assessments:</span> {student.cohort.scores.assessments}</p>
+                            <p><span>Assignments:</span> {student.cohort.scores.assignments * 100}%</p>
+                            <p><span>Projects:</span> {student.cohort.scores.projects * 100}%</p>
+                            <p><span>Assessments:</span> {student.cohort.scores.assessments * 100}%</p>
                         </div>
                         <div>
                             <h3>Certifications:</h3> 
