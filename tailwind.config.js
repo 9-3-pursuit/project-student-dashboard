@@ -7,6 +7,8 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ["Inter var", ...defaultTheme.fontFamily.sans],
+        babylonica: ["Babylonica", "cursive"],
+        unbounded: ["Unbounded", "cursive"],
       },
       colors: {
         icecold: "#a0d2eb",

@@ -5,14 +5,16 @@ const Cohorts = ({ studentData, handleFilterStudentsByCohortClick, cohortSelecte
   console.log(cohortSelected);
 
   return (
-    <div className="cohorts-container px-5 bg-gradient-to-r from-teal-200 grid grid-rows-[10%,90%]">
+    <div className="cohorts-container px-5 bg-gradient-to-r from-emerald-200 grid grid-rows-[10%,90%]">
       <div>
-        <h2 className="text-3xl py-3 border-b-4 border-slate-600">Choose Cohort</h2>
+        <h2 className="text-3xl py-3 border-b-4 text-bold border-slate-600">Choose Cohort</h2>
       </div>
       <div>
         <ul className="py-4">
           <li
-            className={`text-xl py-2 border-b-2 border-zinc-600 hover:text-2xl hover:font-bold hover:border-b-4 hover:text-sky-700 ${cohortSelected === "All Students" ? "text-3xl font-bold border-b-4 text-sky-700" : ""}`}
+            className={`text-xl py-2 border-b-2 border-zinc-600 hover:text-2xl hover:font-bold hover:border-b-4 hover:text-emerald-700 ${
+              cohortSelected === "All Students" ? "text-3xl font-bold border-b-4 bg-gradient-to-r text-emerald-600 from-emerald-400 rounded" : ""
+            }`}
             onClick={() => handleFilterStudentsByCohortClick("All Students")}
           >
             <span>{"All Students"}</span>
@@ -20,7 +22,9 @@ const Cohorts = ({ studentData, handleFilterStudentsByCohortClick, cohortSelecte
           {organizedUniqueCohorts.map((cohort, index) => {
             return (
               <li
-                className={`text-xl py-2 border-b-2 border-zinc-600 hover:text-2xl hover:font-bold hover:border-b-4 hover:text-sky-700 ${cohortSelected === cohort ? "text-3xl font-bold border-b-4 text-sky-700" : ""}`}
+                className={`text-xl pl-2 py-2 border-b-2 border-zinc-600 hover:text-2xl hover:font-bold hover:border-b-4 hover:text-emerald-700 ${
+                  cohortSelected === cohort ? "text-3xl font-bold border-b-4 text-emerald-600 bg-gradient-to-r from-emerald-400 rounded" : ""
+                }`}
                 key={index}
                 onClick={() => handleFilterStudentsByCohortClick(cohort)}
               >

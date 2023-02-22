@@ -46,7 +46,7 @@ const Student = ({ student, addNewNoteToStudent }) => {
 
   return (
     <div className={`${toggle ? "h-96 student-info border-2 border-emerald-500 p-1 grid grid-rows-3 mt-1 overflow-auto bg-slate-300" : "max-h-96 student-info border-2 border-emerald-500 p-1  grid grid-rows-2 mt-1 bg-slate-300"}`}>
-      <div className={`${toggle ? "h-40 grid grid-cols-3" : "h-32px student-info-main grid grid-cols-3"}`}>
+      <div className={`border-2 border-emerald-400 my-1 ${toggle ? "h-40 grid grid-cols-3" : "h-32px student-info-main grid grid-cols-3"}`}>
         <div className="left-side">{/* <img src={student.profilePhoto} alt={student.username} /> */}</div>
         <div className="middle-side">
           <h2>
@@ -58,7 +58,7 @@ const Student = ({ student, addNewNoteToStudent }) => {
         </div>
         <div className="right-side">{isOnTrackToGraduate() ? "On Track To Graduate" : "Not On Track To Graduate"}</div>
       </div>
-      <div className="h-7 flex items-center justify-center mt-8">
+      <div className={`h-7 flex items-center justify-center mt-8 ${toggle && "mt-16"}`}>
         <a
           href="#_"
           onClick={() => handleShowMoreStudentInfo()}
@@ -70,28 +70,51 @@ const Student = ({ student, addNewNoteToStudent }) => {
       </div>
       {toggle ? (
         <div className="h-full extra-student-info grid grid-row-[50%,50%] top-full">
-          <div className="extra-student-scores grid grid-cols-[33%,33%,33%]">
+          <div className="extra-student-scores py-4 border-2 border-emerald-400 grid grid-cols-[33%,33%,33%] text-center">
             <div className="student-extra-left items-center justify-center">
-              <h3>CodeWars:</h3>
-              <p>Current Total: {student.codewars.current.total}</p>
-              <p>Last Week: {student.codewars.current.lastWeek}</p>
-              <p>Goal: {student.codewars.goal.total}</p>
-              <p>Percent of Goal Achieved: {Math.round((student.codewars.current.total / student.codewars.goal.total) * 100)}%</p>
+              <h3 className="bg-slate-200 border-y-2 border-l-2 border-black py-2">CodeWars:</h3>
+              <p className="pt-2">
+                <span className="font-bold">Current Total:</span> {student.codewars.current.total}
+              </p>
+              <p>
+                <span className="font-bold">Last Week:</span> {student.codewars.current.lastWeek}
+              </p>
+              <p>
+                <span className="font-bold">Goal:</span> {student.codewars.goal.total}
+              </p>
+              <p>
+                <span className="font-bold">Percent of Goal Achieved:</span> {Math.round((student.codewars.current.total / student.codewars.goal.total) * 100)}%
+              </p>
             </div>
             <div className="student-extra-middle">
-              <h3>Scores: </h3>
-              <p>Assignments: {student.cohort.scores.assignments * 100}%</p>
-              <p>Projects: {student.cohort.scores.projects * 100}%</p>
-              <p>Assessments: {student.cohort.scores.assessments * 100}%</p>
+              <h3 className="bg-slate-200 border-2 border-black py-2">Scores: </h3>
+              <p className="pt-2">
+                <span className="font-bold">Assignments:</span> {student.cohort.scores.assignments * 100}%
+              </p>
+              <p>
+                <span className="font-bold">Projects:</span> {student.cohort.scores.projects * 100}%
+              </p>
+              <p>
+                <span className="font-bold">Assessments:</span> {student.cohort.scores.assessments * 100}%
+              </p>
             </div>
             <div className="student-extra-right">
-              <h3>Certifications: </h3>
-              <p>Resume: {student.certifications.resume ? "✅" : "❌"}</p>
-              <p>LinkedIn: {student.certifications.linkedin ? "✅" : "❌"}</p>
-              <p>Mock Interview: {student.certifications.mockInterview ? "✅" : "❌"}</p>
-              <p>GitHub: {student.certifications.github ? "✅" : "❌"}</p>
+              <h3 className="bg-slate-200 border-y-2 border-r-2 border-black py-2">Certifications: </h3>
+              <p className="pt-2">
+                <span className="font-bold">Resume:</span> {student.certifications.resume ? "✅" : "❌"}
+              </p>
+              <p>
+                <span className="font-bold">LinkedIn:</span> {student.certifications.linkedin ? "✅" : "❌"}
+              </p>
+              <p>
+                <span className="font-bold">Mock Interview:</span> {student.certifications.mockInterview ? "✅" : "❌"}
+              </p>
+              <p>
+                <span className="font-bold">GitHub:</span> {student.certifications.github ? "✅" : "❌"}
+              </p>
             </div>
           </div>
+          <br />
           <div className="student-notes border-2 border-emerald-400">
             <h3 className="text-center py-2">1-on-1 Notes</h3>
             <div className="student-notes-inner-container">
@@ -109,20 +132,21 @@ const Student = ({ student, addNewNoteToStudent }) => {
                   </label>
                   <br />
                   <div className="py-5">
-                    <button class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-2 px-4 rounded-full" type="submit">
+                    <button onClick={handleSubmit} class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-2 px-5 rounded-full" type="submit">
                       Button
                     </button>
                   </div>
                 </form>
               </div>
-              <div className="student-notes-lists py-4 text-center bg-neutral-500">
+              <div className="student-notes-lists py-5 text-center bg-neutral-400 mx-10 mb-5 rounded">
+                <h3 className="text-2xl text-bold">Notes</h3>
                 {!student.notes.length ? (
                   <p>No notes yet!</p>
                 ) : (
                   <ul className="text-gray-50">
                     {student.notes.map((note) => {
                       return (
-                        <li className="border-solid border-2 border-black">
+                        <li className="border-solid border-2 border-neutral-500 py-2 mx-4 rounded">
                           {note.commenter} says, {note.comment}
                         </li>
                       );

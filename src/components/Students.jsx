@@ -3,10 +3,12 @@ import "../styles/Students.css";
 
 const Students = ({ studentDataClone, addNewNoteToStudent, cohortSelected }) => {
   return (
-    <div className="bg-gradient-to-r to-teal-600 grid grid-rows-[12%,88%] overflow-auto">
-      <div className="h-auto sticky top-0 bg-cyan-400 text-center">
-        <h2 className="py-4 text-3xl">{cohortSelected}</h2>
-        <p className="py-4 text-2xl">Total Students: {studentDataClone.length}</p>
+    <div className="bg-gradient-to-r to-teal-600 grid grid-rows-[18%,82%] overflow-auto rounded-lg">
+      <div className="h-auto sticky top-0 bg-emerald-400 text-center">
+        <h2 className="py-4 text-8xl text-emerald-800 font-babylonica">{cohortSelected}</h2>
+        <p className="py-4 text-2xl">
+          <span className="">Total Students:</span> {studentDataClone.length}
+        </p>
       </div>
 
       <div className="overflow-y-auto">
