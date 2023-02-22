@@ -30,15 +30,11 @@ const App = () => {
   };
 
   return (
-    <div className="max-h-screen grid grid-flow-row">
-      <div className="row-span-1 h-full">
-        <Header />
-      </div>
-      <div className="row-span-1 h-full">
-        <div className="grid grid-cols-8 min-h-screen">
-          <Cohorts studentData={studentData} handleFilterStudentsByCohortClick={handleFilterStudentsByCohortClick} />
-          <Students studentDataClone={studentDataClone} addNewNoteToStudent={addNewNoteToStudent} />
-        </div>
+    <div className="grid grid-rows-[10vh,90vh] min-h-screen">
+      <Header />
+      <div className="grid grid-cols-[20vw,80vw]">
+        <Cohorts studentData={studentData} handleFilterStudentsByCohortClick={handleFilterStudentsByCohortClick} />
+        <Students studentDataClone={studentDataClone} addNewNoteToStudent={addNewNoteToStudent} />
       </div>
     </div>
   );

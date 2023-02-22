@@ -9,7 +9,7 @@ const Header = () => {
   };
 
   return (
-    <header className="grid grid-cols-2 bg-icecold h-20 text-center sticky">
+    <header className="grid grid-cols-[90%,10%]">
       <h1 className="text-3xl">Student Dashboard</h1>
       <button className="bg-cyan-300" onClick={toggleDarkAndLightMode}>
         {mode ? "Dark" : "Light"}

@@ -45,7 +45,7 @@ const Student = ({ student, addNewNoteToStudent }) => {
   };
 
   return (
-    <div className="h-full student-info border-2 border-emerald-500 p-1">
+    <div className="h-30 student-info border-2 border-emerald-500 p-1">
       <div className="student-info-main grid grid-cols-3">
         <div className="left-side">{/* <img src={student.profilePhoto} alt={student.username} /> */}</div>
         <div className="middle-side">
@@ -58,16 +58,16 @@ const Student = ({ student, addNewNoteToStudent }) => {
         </div>
         <div className="right-side">{isOnTrackToGraduate() ? "On Track To Graduate" : "Not On Track To Graduate"}</div>
       </div>
+      <br />
       <a
-        onClick={() => handleShowMoreStudentInfo()}
         href="#_"
-        className="rounded inline-flex group items-center justify-center px-3.5 py-2 m-1 cursor-pointer border-b-4 border-l-2 active:border-purple-600 active:shadow-none shadow-lg bg-gradient-to-tr from-purple-600 to-purple-500 border-purple-700 text-white"
+        onClick={() => handleShowMoreStudentInfo()}
+        className="relative rounded px-5 py-2.5 overflow-hidden group bg-green-500 hover:bg-gradient-to-r hover:from-green-500 hover:to-green-400 text-white hover:ring-2 hover:ring-offset-2 hover:ring-green-400 transition-all ease-out duration-300"
       >
-        <span className="absolute w-0 h-0 transition-all duration-300 ease-out bg-white rounded-full group-hover:w-32 group-hover:h-32 opacity-10"></span>
-        <span className="">{toggle ? "Show Less..." : "Show More..."}</span>
+        <span class="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
+        <span class="relative">{toggle ? "Show Less..." : "Show More..."}</span>
       </a>
-      {/* <p onClick={() => handleShowMoreStudentInfo()}>{toggle ? "Show Less..." : "Show More..."}</p> */}
-
+      <br />
       {toggle ? (
         <div className="extra-student-info">
           <div className="extra-student-scores">
