@@ -1,5 +1,4 @@
-import "./StatsSection.css";
-import ScoreLister from "./ScoreLister";
+import StatFromScores from "./StatFromScores";
 
 export default function StatsSection({ student }) {
   const {
@@ -16,10 +15,23 @@ export default function StatsSection({ student }) {
   return (
     <>
       <div className="stats-section">
-        <ScoreLister title={"Certifications"} scores={certifications} />
-        <ScoreLister title={"CodeWars"} scores={codewarsToDisplay} />
-        <ScoreLister title={"Scores"} scores={scores} />
+        <StatsLister title={"Certifications"} stats={certifications} />
+        <StatsLister title={"CodeWars"} stats={codewarsToDisplay} />
+        <StatsLister title={"Scores"} stats={scores} />
       </div>
     </>
+  );
+}
+
+function StatsLister({ title, stats }) {
+  const statsFromScores = Object.entries(stats).map((stat) => (
+    <StatFromScores scoreInfo={stat} SectionTitle={title} />
+  ));
+
+  return (
+    <div>
+      <h3>{title}</h3>
+      {statsFromScores}
+    </div>
   );
 }

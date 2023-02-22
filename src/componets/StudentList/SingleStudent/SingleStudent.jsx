@@ -1,8 +1,6 @@
 import { useState } from "react";
-import StatsSection from "./StatsSection/StatsSection";
-import OneOnOne from "./OneOnOne.jsx/OneOnOne";
 
-export default function SingleStudent({ student }) {
+export default function SingleStudent({ student, children }) {
   const [expanded, setExpanded] = useState(false);
   const {
     profilePhoto,
@@ -11,11 +9,11 @@ export default function SingleStudent({ student }) {
     dob,
   } = student;
 
-  const onTrack = checkStudentOnTrack(student); //Line 39
+  const onTrack = checkStudentOnTrack(student);
 
   return (
     <div className="single-student">
-      <img src={profilePhoto} alt={preferredName + " profile photo"} />
+      <img src={profilePhoto} alt={`${preferredName} ${surname}'s profile`} />
       <div>
         <h3>{`${preferredName} ${middleName.slice(0, 1)}. ${surname}`}</h3>
         <p>{username}</p>
@@ -31,12 +29,7 @@ export default function SingleStudent({ student }) {
           Show {expanded ? "Less" : "More"}...
         </p>
       </div>
-      {expanded && (
-        <>
-          <StatsSection student={student} />
-          <OneOnOne notes={student.notes} />
-        </>
-      )}
+      {expanded && <>{children}</>}
     </div>
   );
 }
@@ -53,7 +46,7 @@ function checkStudentOnTrack(student) {
 function formatDOB(DOB) {
   let splitDOB = DOB.split("/").reverse();
   let formattedDOB = new Intl.DateTimeFormat("en-US", {
-    dateStyle: "medium",
+    dateStyle: "long",
   }).format(new Date(...splitDOB));
 
   return formattedDOB;

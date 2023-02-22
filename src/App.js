@@ -7,7 +7,7 @@ import { studentData } from "./data/data";
 export default function App() {
   const OnScreenInitalState = {
     filter: "All Students",
-    students: [...studentData],
+    students: studentData,
   };
   const [studentsOnScreen, setStudentsOnScreen] = useState(OnScreenInitalState);
 
