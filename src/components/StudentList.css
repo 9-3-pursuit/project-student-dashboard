@@ -59,7 +59,3 @@ svg.check {
     display: grid;
     grid-template-columns: repeat(3, 280px);
 }
-
-.hide {
-    display: none;
-}
