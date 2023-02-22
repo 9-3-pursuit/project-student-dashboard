@@ -51,3 +51,7 @@ svg.check {
     color: green;
     stroke-width: 3px;
 }
+
+.hide {
+    display: none;
+}

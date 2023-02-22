@@ -10,10 +10,13 @@ export default function Students({ currentCohortArray }) {
     
     function showMoreOrLess(event) {
         if (event.target.textContent === "Show More...") {
-            event.target.textContent = "Show Less..."
-        } else {
-            event.target.textContent = "Show More..."
+            event.target.textContent = "Show Less...";
+            event.target.nextSibling.className = "show";
 
+
+        } else {
+            event.target.textContent = "Show More...";
+            event.target.nextSibling.className = "hide";
         }
     }
    
@@ -29,7 +32,8 @@ export default function Students({ currentCohortArray }) {
                         <p><span className="birthdaySpan">Birthday:</span> {formatBirthday.format(birthday)}</p>
                     </div>
                     <p className="showMore" onClick={showMoreOrLess}>Show More...</p>
-                    <div className="studentDetails">
+                
+                    <div className="studentDetails hide">
                         <div>
                             <h3>Codewars:</h3>
                             <p><span>Current Total:</span> {student.codewars.current.total}</p>
