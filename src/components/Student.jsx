@@ -2,7 +2,9 @@ import "../styles/Student.css";
 
 import { useState } from "react";
 
-const Student = ({ student, addNewNoteToStudent }) => {
+const Student = ({ student, addNewNoteToStudent, darkMode }) => {
+  console.log(`This is from Student: ${darkMode}`);
+
   const [toggle, setToggle] = useState(false);
   const [studentNoteForm, setStudentNoteForm] = useState({
     commenter: "",
@@ -132,7 +134,7 @@ const Student = ({ student, addNewNoteToStudent }) => {
                   </label>
                   <br />
                   <div className="py-5">
-                    <button onClick={handleSubmit} class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-2 px-5 rounded-full" type="submit">
+                    <button onClick={handleSubmit} className="bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-2 px-5 rounded-full" type="submit">
                       Button
                     </button>
                   </div>

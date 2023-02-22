@@ -1,11 +1,11 @@
 import "../styles/Cohorts.css";
 
-const Cohorts = ({ studentData, handleFilterStudentsByCohortClick, cohortSelected }) => {
+const Cohorts = ({ studentData, handleFilterStudentsByCohortClick, cohortSelected, darkMode }) => {
   const organizedUniqueCohorts = extractAndOrganizeUniqueCohorts(studentData);
-  console.log(cohortSelected);
+  console.log(`This is from Cohorts: ${darkMode}`);
 
   return (
-    <div className="cohorts-container px-5 bg-gradient-to-r from-emerald-200 grid grid-rows-[10%,90%]">
+    <div className="cohorts-container lg:w-60 px-5 bg-gradient-to-r from-emerald-200 grid grid-rows-[10%,90%]">
       <div>
         <h2 className="text-3xl py-3 border-b-4 text-bold border-slate-600">Choose Cohort</h2>
       </div>

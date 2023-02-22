@@ -7,6 +7,7 @@ import "./styles/App.css";
 const App = () => {
   const [studentDataClone, setStudentDataClone] = useState(studentData);
   const [cohortSelected, setCohortSelected] = useState("All Students");
+  const [darkMode, setDarkMode] = useState(false);
 
   const addNewNoteToStudent = (studentID, newNote) => {
     // avoid state mutation / refactor
@@ -32,12 +33,16 @@ const App = () => {
     }
   };
 
+  const handleDarkModeClick = () => {
+    setDarkMode(!darkMode);
+  };
+
   return (
     <div className="grid grid-rows-[10vh,90vh] min-h-screen">
-      <Header />
-      <div className="grid grid-cols-[20vw,80vw]">
-        <Cohorts studentData={studentData} handleFilterStudentsByCohortClick={handleFilterStudentsByCohortClick} cohortSelected={cohortSelected} />
-        <Students studentDataClone={studentDataClone} addNewNoteToStudent={addNewNoteToStudent} cohortSelected={cohortSelected} />
+      <Header handleDarkModeClick={handleDarkModeClick} darkMode={darkMode} />
+      <div className="grid lg:grid-cols-[40vw,60vw] xl:grid-cols-[30vw,70vw] 2xl:grid-cols-[20vw,80vw]">
+        <Cohorts studentData={studentData} handleFilterStudentsByCohortClick={handleFilterStudentsByCohortClick} cohortSelected={cohortSelected} darkMode={darkMode} />
+        <Students studentDataClone={studentDataClone} addNewNoteToStudent={addNewNoteToStudent} cohortSelected={cohortSelected} darkMode={darkMode} />
       </div>
     </div>
   );
