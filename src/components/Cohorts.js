@@ -22,7 +22,7 @@ export default function Cohorts({ studentData, addSpaceBetweenCohort, handleCoho
     return(
         <div>
             <h4 className="cohorts" onClick={() => handleCohortClick("All Students")}>All Students</h4>
-            {sortedAndFormattedCohorts.map(cohorts => {
+           {sortedAndFormattedCohorts.map(cohorts => {
                 return(
                     <h4 key={cohorts} className="cohorts" onClick={() => handleCohortClick(cohorts)}>{cohorts}</h4>
                 )

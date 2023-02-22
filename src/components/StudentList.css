@@ -42,4 +42,12 @@ h3 {
     cursor: pointer;
 }
 
+svg.x {
+    color: red;
+    stroke-width: 3px;
+}
 
+svg.check {
+    color: green;
+    stroke-width: 3px;
+}
