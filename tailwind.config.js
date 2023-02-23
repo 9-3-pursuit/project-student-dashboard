@@ -14,6 +14,16 @@ module.exports = {
       colors: {
         icecold: "#a0d2eb",
       },
+      animation: {
+        tilt: "tilt 1s 10s linear",
+      },
+      keyframes: {
+        tilt: {
+          "0%, 50%, 100%": { transform: "rotate(0deg)" },
+          "25%": { transform: "rotate(2deg)" },
+          "75%": { transform: "rotate(-2deg)" },
+        },
+      },
     },
   },
   plugins: [require("@tailwindcss/forms")],

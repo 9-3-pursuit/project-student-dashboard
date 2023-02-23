@@ -38,7 +38,7 @@ const App = () => {
   };
 
   return (
-    <div className="grid grid-rows-[10vh,90vh] min-h-screen">
+    <div className="grid grid-rows-[10vh,90vh] min-h-screen bg-emerald-200">
       <Header handleDarkModeClick={handleDarkModeClick} darkMode={darkMode} />
       <div className="grid lg:grid-cols-[40vw,60vw] xl:grid-cols-[30vw,70vw] 2xl:grid-cols-[20vw,80vw]">
         <Cohorts studentData={studentData} handleFilterStudentsByCohortClick={handleFilterStudentsByCohortClick} cohortSelected={cohortSelected} darkMode={darkMode} />
