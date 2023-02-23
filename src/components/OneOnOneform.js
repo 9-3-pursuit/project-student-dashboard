@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./OneOnOne.css";
 
 export default function OneOnOneForm({ student }) {
     const blankNote = {
@@ -20,14 +21,18 @@ export default function OneOnOneForm({ student }) {
         setNote({...note, [event.target.id]: event.target.value})
     }
     return(
-        <div>
+        <div className="notesDiv">
             <h4>1-on-1 Notes</h4>
             <form onSubmit={handleAddNote}>
-                <label htmlFor="commenter">Commenter Name</label>
-                <input type="text" id="commenter" value={note.commenter} onChange={handleNoteInput} required />
-                <label htmlFor="comment">Comment</label>
-                <input type="text" id="comment" value={note.comment} onChange={handleNoteInput} required />
-                <input type="submit" value={"Add Note"} />
+                <div className="commentDiv">
+                    <label htmlFor="commenter">Commenter Name</label>
+                    <input type="text" id="commenter" value={note.commenter} onChange={handleNoteInput} required />
+                </div>
+                <div className="commentDiv">
+                    <label htmlFor="comment">Comment</label>
+                    <input type="text" id="comment" value={note.comment} onChange={handleNoteInput} required />
+                </div>
+                <input className="submit" type="submit" value={"Add Note"} />
             </form>
             <ul>
                 {notesArray.map((noteObj, i) => {

@@ -7,8 +7,10 @@
 .student {
     border: 2px solid #5c946f;
     display: grid;
-    grid-template-columns: 180px 1fr;
+    grid-template-columns: 180px 280px 280px;
     padding: 30px;
+    min-height: 120px;
+    max-width: 800px;
 }
 
 .studentListHeader {
@@ -26,6 +28,8 @@
 
 .studentMainInfo p,
 h3 {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
     margin: 5px 0 0 0;
 }
 
@@ -35,11 +39,16 @@ span {
 }
 
 .showMore {
-    grid-column: 2;
     color: #5c946f;
     text-decoration: underline;
     font-weight: 600;
     cursor: pointer;
+    margin-top: 30px!important;
+}
+
+img {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
 }
 
 svg.x {
@@ -58,4 +67,10 @@ svg.check {
 .studentDetails {
     display: grid;
     grid-template-columns: repeat(3, 280px);
+}
+
+.graduationTrack {
+    text-align: end;
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
 }
