@@ -3,7 +3,7 @@ import "./app.css";
 import CohortList from "./components/CohortList";
 import studentData from "./data/data.json";
 import StudentList from "./components/StudentList";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 function App() {
   const initialCohort = "All Students";
