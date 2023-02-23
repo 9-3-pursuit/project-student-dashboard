@@ -1,0 +1,165 @@
+
+
+header {
+    height: 50px;
+    background-color:#25c14b;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+header h1 {
+    color: white;
+}
+
+header h1:hover {
+    color: red;
+}
+
+
+main {
+    display: grid;
+    grid-template-columns: 30% 70%;
+   
+}
+
+.cohorts {
+   
+    background-color: #ededed;
+   
+}
+.cohorts li {
+    padding-bottom: 25px;
+    padding-right: 35px;
+   list-style-type: none;
+   color: #219f3d;
+}
+
+.cohorts li:hover {
+    cursor: pointer;
+    color: red;
+}
+
+.students {
+   
+    background-color: #ededed;
+    
+}
+
+.students li {
+    list-style-type: none;
+}
+
+.students img {
+    width: 180px;
+    max-height: 250px;
+   
+}
+
+.onestudent {
+    border: 2px solid rgb(144, 124, 6);
+    border-radius: 10px;
+    margin: 5px;
+    padding: 5px;
+}
+.infoplacement {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+    margin: 5px;
+    
+}
+
+.studentinfo {
+    margin-left: 15px;
+}
+
+.achievement {
+    margin: 5px;
+    border: 1.3px solid rgb(236, 60, 6);
+    border-radius: 10px;
+    background-color:#d7d7d7 ;
+    display: flex;
+    justify-content:space-between;
+    padding-left: 7px;
+    padding-right: 7px;
+   
+}
+
+.achievement li {
+    list-style-type: none;
+    padding-bottom: 7px;
+}
+
+
+.achievement .green {
+    color: #25c14b;
+}
+.achievement .green:hover{
+    color: navy;
+}
+
+.achievement .yellow {
+    color: yellow;
+}
+.achievement .yellow:hover{
+    color: navy;
+}
+
+.achievement .red {
+    color: red;
+}
+.achievement .red:hover{
+    color: navy;
+}
+
+
+
+
+
+.encabezado {
+    padding-left: 50px;
+    
+}
+
+
+form {
+   padding: 7px;
+   border: 1.3px solid rgb(236, 60, 6);
+   border-radius: 10px;
+   background-color:#d7d7d7 ;
+}
+
+
+form .dblock {
+    display: block;
+    margin: 3px;
+}
+
+.p2button button {
+    border: 0.3px solid  #ededed;
+    border-radius: 6px;
+    
+}
+
+.p2button button:hover {
+    color: red;
+    cursor: pointer;
+}
+
+.graduate {
+    color: green;
+   padding-left: 7px;
+   padding-right: 7px;
+    border: 0.5px solid green;
+    border-radius: 5px;
+   
+}
+
+.graduate:hover {
+    color: navy;
+   
+}
+
+
