@@ -1,24 +1,24 @@
-export default function CohortList({ studentData }) {
+export default function CohortList({ cohortListData }) {
     return (
         <div className="cohort_list">
             <h3>Choose a Class by Start Date</h3>
             <a>All Students</a>
             <hr></hr>
-            <a>Winter 2026</a>
+            <a>{cohortListData[0].displayName}</a>
             <hr></hr>
-            <a>Fall 2026</a>
+            <a>{cohortListData[1].displayName}</a>
             <hr></hr>
-            <a>Summer 2026</a>
+            <a>{cohortListData[2].displayName}</a>
             <hr></hr>
-            <a>Spring 2026</a>
+            <a>{cohortListData[3].displayName}</a>
             <hr></hr>
-            <a>Winter 2025</a>
+            <a>{cohortListData[4].displayName}</a>
             <hr></hr>
-            <a>Fall 2025</a>
+            <a>{cohortListData[5].displayName}</a>
             <hr></hr>
-            <a>Summer 2025</a>
+            <a>{cohortListData[6].displayName}</a>
             <hr></hr>
-            <a>Spring 2025</a>
+            <a>{cohortListData[7].displayName}</a>
             <hr></hr>
         </div>
     )
