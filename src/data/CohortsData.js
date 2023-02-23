@@ -45,4 +45,9 @@ function formatCohortName(cohortId) {
 
 let cohortListData = getCohortListFromStudentData(studentData);
 
+cohortListData.unshift({
+    id: "All",
+    displayName: "All Students"
+})
+
 export default cohortListData

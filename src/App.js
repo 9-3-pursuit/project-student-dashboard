@@ -11,7 +11,6 @@ import "./data/CohortsData"
 
 
 function App() {
-  // console.log(spring2025);
   return (
     <>
       <TopBar />
