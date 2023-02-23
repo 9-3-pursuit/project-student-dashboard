@@ -1,0 +1,122 @@
+header {
+    height: 50px;
+    background-color: tan;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    font-family: cursive;
+
+}
+
+header h1 {
+    color: black;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    font-family: cursive;
+  
+}
+
+.cohorts{
+    background-color: khaki;
+    text-align: center;
+
+
+}
+
+.cohorts li:hover {
+    list-style-type: none;
+   
+}
+
+.cohorts ul {
+    text-align: left;
+}
+
+.students {
+    background-color: lightgray;
+
+}
+
+.students img {
+    width: 180px;
+    max-height: 250px;
+
+}
+
+.firstStudent {
+    border: 7px darkgray double;
+    margin: 5px;
+    padding: 10px;
+}
+
+.picture {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+    margin: 5px;
+}
+
+.infoSpot {
+    margin-left: 15px;
+}
+
+.achievement {
+    margin: 5px;
+    border: 3px solid darkkhaki;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 7px;
+    padding-right: 7px;
+
+}
+
+.achievement {
+    list-style-type: none;
+    padding-bottom: 7px;
+}
+
+.achievement .green {
+    color: mediumseagreen;
+}
+
+.achievement .yellow {
+    color:yellow;
+}
+
+.achievement .red {
+    color:crimson;
+}
+
+form {
+    padding: 7px;
+    border: 5px solid burlywood;
+}
+
+
+form .dblock {
+    display: block;
+    margin: 3px;
+}
+
+
+.students .green2 {
+    color: green;
+}
+
+.toggleButton button:hover {
+    color:slateblue;
+    background-color: lightgrey;
+    border: 0.3px solid;
+    text-decoration: underline;
+}
+
+.graduateinfo {
+    color: cadetblue;
+    border: 3px dotted blanchedalmond;
+
+}
+
