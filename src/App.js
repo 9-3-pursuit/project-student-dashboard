@@ -15,16 +15,16 @@ import { useState } from "react";
 function App() {
   const [info,setInfo] = useState(Data) 
   const [cohort, setCohort] = useState("All Student")
-  const [name,setName] = useState("Florence")
+ 
   
   return (
    <>
     
-      <Header name={name}/>
+      <Header />
     
     <main>
      
-      <Cohorts info={info} setCohort={setCohort} name={name} setName={setName} />
+      <Cohorts info={info} setCohort={setCohort} />
       <Students info={info}  setInfo={setInfo} cohort={cohort}/>
     </main>
    

@@ -1,8 +1,8 @@
 function Red ({total}) {
     return (
-      <red>
+      <div className="red">
           <h3>Percent of Goal Achieved {total} %</h3>
-      </red>
+      </div>
     )
   }
   

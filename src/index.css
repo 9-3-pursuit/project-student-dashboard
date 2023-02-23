@@ -65,7 +65,7 @@ main {
 .infoplacement {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: start;
     margin: 5px;
     
@@ -93,24 +93,24 @@ main {
 }
 
 
-.achievement green {
+.achievement .green {
     color: #25c14b;
 }
-.achievement green:hover{
+.achievement .green:hover{
     color: navy;
 }
 
-.achievement yellow {
+.achievement .yellow {
     color: yellow;
 }
-.achievement yellow:hover{
+.achievement .yellow:hover{
     color: navy;
 }
 
-.achievement red {
+.achievement .red {
     color: red;
 }
-.achievement red:hover{
+.achievement .red:hover{
     color: navy;
 }
 
@@ -146,6 +146,20 @@ form .dblock {
 .p2button button:hover {
     color: red;
     cursor: pointer;
+}
+
+.graduate {
+    color: green;
+   padding-left: 7px;
+   padding-right: 7px;
+    border: 0.5px solid green;
+    border-radius: 5px;
+   
+}
+
+.graduate:hover {
+    color: navy;
+   
 }
 
 

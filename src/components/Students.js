@@ -32,6 +32,11 @@ const Students = ({info,setInfo,cohort}) =>{
                              <p>{student.username}</p>
                              <p>Birthdate: {student.dob}</p>
                            </div>
+                           <div className="graduate">
+                            { (student.certifications.resume && student.certifications.linkedin && student.certifications.github && student.certifications.mockInterview  & (student.codewars.current.total > 600)) ? 
+                                (<h4>On Track To Graduate</h4>) : (null)
+                            }    
+                           </div>
                         </div> 
                         <StudentP2 id={student.id} info={info}  setInfo={setInfo}  student={student} />
 

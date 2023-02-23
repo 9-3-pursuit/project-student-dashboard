@@ -1,10 +1,14 @@
 function Yellow ({total}) {
     return (
-      <yellow>
+      <div className="yellow">
           <h3>Percent of Goal Achieved {total} %</h3>
-      </yellow>
+      </div>
     )
   }
   
 
   export default Yellow
+
+
+
+

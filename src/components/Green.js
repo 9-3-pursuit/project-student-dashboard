@@ -3,9 +3,9 @@
 function Green ({total}) {
   return (
    
-       <green>
+       <div className="green">
         <h3>Percent of Goal Achieved {total} %</h3>
-        </green>
+        </div>
   
    
   )
