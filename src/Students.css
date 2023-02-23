@@ -1,0 +1,55 @@
+article {
+    display: flex;
+    border: 3px solid orangered ;
+    padding: 2rem;
+    margin-top: 10px;
+    border-radius: 20px;
+  }
+  
+  .studentCards {
+    margin: 5px 50px;
+  }
+  
+  .Return {
+    padding: 20px;
+  }
+  
+  img {
+    height: 150px;
+    width: 150px;
+    border-radius: 20px;
+    margin-top: 20px;
+  }
+  
+  span {
+    color: green;
+  }
+
+  #More {
+    background: none;
+    border: none;
+    text-decoration: underline;
+    color: blue;
+    padding-left: 0;
+    font-size: 20px;
+  }
+  
+  #More:hover {
+    color: black;
+  }
+  
+  button {
+    background: none;
+    border: none;
+    color: blue;
+    font-size: 30px;
+    padding-left: 20px;
+    text-align: center;
+    font-size: 23px;
+    padding: 5px;
+    font-weight: bold;
+  }
+  
+  button:hover {
+    color: black;
+  }

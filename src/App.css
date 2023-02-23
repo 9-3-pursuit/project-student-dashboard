@@ -3,11 +3,7 @@
   margin: 0 auto;
 }
 
-.body {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  padding-top: 30px;
-}
+
 
 .header {
   background-color: rgba(255, 5, 121, 0.895);
@@ -17,12 +13,23 @@
   font-size: larger;
   width: 100%;
 }
+.body {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  padding-top: 30px;
+}
 
 .classCohort {
   border: 5px solid;
-  
-  
+  margin-left: 40px;
 }
+
+.cohort-title {
+  text-align: center;
+  margin-left: 50px;
+}
+  
+
 
 li {
   text-align: left;
@@ -31,15 +38,14 @@ li {
 }
 
 hr {
-  width: 12%;
-  margin-left: 0;
-  border-top: 1px solid red;
+  background-color: rgb(66, 66, 234);
+  height: 2px;
 
 }
 
 .students {
-  border: 5px solid;
-  border-color: aqua;
+  /* border: 2px solid; */
+  /* border-color: black; */
   margin-left: 100px;
   padding-left: 50px;
 } 
