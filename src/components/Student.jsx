@@ -54,8 +54,8 @@ const Student = ({ student, addNewNoteToStudent, darkMode }) => {
   };
 
   return (
-    <div className={`${toggle ? "h-96 student-info border-2 border-emerald-500 p-1 grid grid-rows-3 mt-1 overflow-auto bg-slate-300" : "max-h-96 student-info border-2 border-emerald-500 p-1  grid grid-rows-2 mt-1 bg-slate-300"}`}>
-      <div className={`border-2 border-emerald-400 my-1 ${toggle ? "h-40 grid grid-cols-3" : "h-32px student-info-main grid grid-cols-3"}`}>
+    <div className={`rounded-xl ${toggle ? "h-96 student-info border-2 border-emerald-500 p-1 grid grid-rows-3 mt-1 overflow-auto bg-slate-300" : "max-h-96 student-info border-2 border-emerald-500 p-1  grid grid-rows-2 mt-1 bg-slate-300"}`}>
+      <div className={`border-2 border-emerald-400 my-1 py-4 rounded-xl ${toggle ? "h-40 grid grid-cols-3" : "h-32px student-info-main grid grid-cols-3"}`}>
         <div className="left-side">{/* <img src={student.profilePhoto} alt={student.username} /> */}</div>
         <div className="middle-side">
           <h2>
@@ -79,9 +79,9 @@ const Student = ({ student, addNewNoteToStudent, darkMode }) => {
       </div>
       {toggle ? (
         <div className="h-full extra-student-info grid grid-row-[50%,50%] top-full">
-          <div className="extra-student-scores py-4 border-2 border-emerald-400 grid grid-cols-[33%,33%,33%] text-center">
+          <div className="extra-student-scores py-4 border-2 border-emerald-400 grid grid-cols-[33%,33%,33%] text-center rounded-xl">
             <div className="student-extra-left items-center justify-center">
-              <h3 className="bg-slate-200 border-y-2 border-l-2 border-black py-2">CodeWars:</h3>
+              <h3 className="bg-slate-200 border-2 border-black py-2 rounded mx-6">CodeWars:</h3>
               <p className="pt-2">
                 <span className="font-bold">Current Total:</span> {student.codewars.current.total}
               </p>
@@ -96,7 +96,7 @@ const Student = ({ student, addNewNoteToStudent, darkMode }) => {
               </p>
             </div>
             <div className="student-extra-middle">
-              <h3 className="bg-slate-200 border-2 border-black py-2">Scores: </h3>
+              <h3 className="bg-slate-200 border-2 border-black rounded py-2 mx-6">Scores: </h3>
               <p className="pt-2">
                 <span className="font-bold">Assignments:</span> {student.cohort.scores.assignments * 100}%
               </p>
@@ -108,7 +108,7 @@ const Student = ({ student, addNewNoteToStudent, darkMode }) => {
               </p>
             </div>
             <div className="student-extra-right">
-              <h3 className="bg-slate-200 border-y-2 border-r-2 border-black py-2">Certifications: </h3>
+              <h3 className="bg-slate-200 border-2 border-black py-2 rounded mx-6">Certifications: </h3>
               <p className="pt-2">
                 <span className="font-bold">Resume:</span> {student.certifications.resume ? "✅" : "❌"}
               </p>
@@ -124,20 +124,20 @@ const Student = ({ student, addNewNoteToStudent, darkMode }) => {
             </div>
           </div>
           <br />
-          <div className="student-notes border-2 border-emerald-400">
+          <div className="student-notes border-2 border-emerald-400 rounded-xl">
             <h3 className="text-center py-2">1-on-1 Notes</h3>
             <div className="student-notes-inner-container">
-              <div className="form-container">
+              <div className="form-container text-center">
                 <form onSubmit={handleSubmit}>
                   <label>
                     Commenter Name:
-                    <input type="text" id="commenter" name="commenter" value={studentNoteForm.commenter} onChange={handleTextChange} />
+                    <input type="text" id="commenter" name="commenter" value={studentNoteForm.commenter} onChange={handleTextChange} className="ml-4" />
                   </label>
                   <br />
                   <br />
                   <label>
                     Comment:
-                    <input type="text" id="comment" name="comment" value={studentNoteForm.comment} onChange={handleTextChange} />
+                    <input type="text-area" id="comment" name="comment" value={studentNoteForm.comment} onChange={handleTextChange} className="ml-20 form-textarea" />
                   </label>
                   <br />
                   <div className="py-5">
