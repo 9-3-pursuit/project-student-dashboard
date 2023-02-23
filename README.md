@@ -1,5 +1,7 @@
 # Student Dashboard Project - Log
 
+# Deployed on Netlify => [click here](https://student-dashboard-project-hf.netlify.app/)
+
 | Requirement                      |  Point [ 1 ]   |
 | :------------------------------- | :------------: |
 | Student List                     |       ✅       |
