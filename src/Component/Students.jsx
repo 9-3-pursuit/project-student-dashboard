@@ -3,8 +3,11 @@ import Student from './Student';
 import './Students.css';
 
 
-const Students = ({ data }) => {
+
+const Students = ({ data, student }) => {
   const [expandedStudentId, setExpandedStudentId] = useState(null);
+  
+  
   
 
   const handleShowDetails = (studentId) => {
@@ -30,10 +33,8 @@ const Students = ({ data }) => {
   
 
   return (
-    <div className="students-container">
-      <h2>All Students</h2>
-      <p>Total Students: {data.length}</p>
-      {data.map((student) => (
+    
+      
         <div key={student.id} className="student-card">
           <h3>
             {student.names.preferredName} {student.names.middleName} {student.names.surname}
@@ -44,11 +45,13 @@ const Students = ({ data }) => {
           <a href="#" onClick={() => handleShowDetails(student.id)}>
             {expandedStudentId === student.id ? 'Show Less' : 'Show More'}
           </a>
-          {expandedStudentId === student.id && <Student student={student}  />}
+          {expandedStudentId === student.id &&
+            <Student student={student} />}
+          
           
         </div>
-      ))}
-    </div>
+      
+    
   );
 };
 

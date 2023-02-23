@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 
-const Comments = () => {
+const Comments = ({ student }) => {
+    
+    console.log(21312312, student)
     const [comments, setComments] = useState({
         commenter: '', comment: ''
     });
@@ -14,18 +16,19 @@ const Comments = () => {
         setComments({...comments, [e.target.id]: e.target.value})
     };
 
-//   const handleComments = (e) => {
-      
-//   };
 
-  const handleSubmit = (e) => {
+
+const handleSubmit = (e) => {
     e.preventDefault();
-    // setSubmittedComment([...submittedComment, comments],[commenter]);
-    // setComments('');
-    setSubmittedComment([...submittedComment, comments.commenter]);
-    console.log("comments:", comments)
-    
+    const notesObj = {
+        [student.id]: student.id, 
+        commenter: comments.commenter,
+        comment: comments.comment
+    }
+    setSubmittedComment([...submittedComment, notesObj]);
+    setComments({ commenter: '', comment: '' });
   };
+  
 
   return (
     <div>
@@ -40,8 +43,8 @@ const Comments = () => {
       
       <div>
         <ul>
-          {submittedComment.map((comment, index) => (
-              <li key={index}>{comment.comment} {comment.commenter}</li>
+                  {submittedComment.filter((note) => student.id === note[student.id]).map((comment, index) => (
+              <li key={index}>{comment.commenter} {comment.comment}</li>
               
           ))}
         </ul>

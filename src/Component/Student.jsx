@@ -4,9 +4,8 @@ import Comments from './Comments';
 
 const Student = ({ student}) => {
 
-  
 
-  const [comments, setComments] = useState('');
+  
   return (
     <div>
       <p>Codewars Current Total: {student.codewars.current.total}</p>
@@ -21,7 +20,7 @@ const Student = ({ student}) => {
       <p>Notes:</p>
       <ul>
         {student.notes.map((note) => (
-          <li key={note.commenter}>{note.comment}</li>
+          <li key={note.id}> {note.commenter} says, "{note.comment}"</li>
         ))}
       </ul>
       <p>Cohort:</p>
@@ -35,7 +34,7 @@ const Student = ({ student}) => {
           <li>Assessments: {student.cohort.scores.assessments}</li>
         </ul>
       </ul>
-      <Comments comments = {comments} setComments ={setComments} />
+      <Comments  student={student} />
     </div>
   );
 };

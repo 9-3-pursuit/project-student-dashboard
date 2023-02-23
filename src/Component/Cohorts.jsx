@@ -1,11 +1,16 @@
 import { useState } from "react";
 
-const Cohorts = (props) => {
 
-    console.log("props:", props)
-    console.log("props.data:", props.data)
 
-    const cohortCodes = props.data.map((student) => student.cohort.cohortCode)
+const Cohorts = ({data, handleCohortClick}) => {
+    
+    
+   
+
+    // console.log("props:", props)
+    // console.log("props.data:", props.data)
+
+    const cohortCodes = data.map((student) => student.cohort.cohortCode)
     const uniqueCohortCodes = new Set(cohortCodes)
     const cohortCodesArray = [...uniqueCohortCodes]
     const seasons = { Winter: 0, Spring: 1, Summer: 2, Fall: 3 }
@@ -28,36 +33,44 @@ const Cohorts = (props) => {
         const year = cohortCode.slice(-4);
         return `${season} ${year}`;
     });
-    
-    
-    
-    // const [showCohort, setShowCohort] = useState(false)
 
+    console.log("formattedCohortCodes:", formattedCohortCodes)
+    
+    
+    
+
+    
+
+    // const filteredStudents = selectedCohort !== "" ?
+    // props.data.filter((student) => {
+    //     const formattedCohortCode = student.cohort.cohortCode;
+    //     const selectedCohortCode = selectedCohort.split(" ").join(""); 
+    //     const formattedCohortCodeWithoutSpaces = formattedCohortCode.split(" ").join(""); 
+    //     return formattedCohortCodeWithoutSpaces === selectedCohortCode;
+    // })
+    // : props.data;
+
+    
+   
+
+    
    
     
-    // const handleShowCohort = () => {
-    //     if (setShowCohort(!showCohort)) {
-            
-    //     }
-
-    // }
-
-
-
 
     return (
         <div>
             <h2>Choose a Class by Start Date</h2>
-            <a href="#">All Students</a>
+            <a href="#" onClick={() => handleCohortClick("All Students")} >All Students</a>
             {formattedCohortCodes.map((cohort) => {
                 return (
                     <div key={cohort}>
-                        <a href="#">{cohort}</a>
+                        <a href="#" onClick={() => handleCohortClick(cohort)}>{cohort}</a>
                     </div>
 
                 )
             })}
 
+        
             
             
         </div>
