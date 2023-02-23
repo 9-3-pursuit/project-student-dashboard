@@ -1,7 +1,6 @@
 import { useState } from "react";
 import "../styles/Student.css"
 
-
 function Student ({student, index}) {
     const [showMore, setShowMore] = useState({
         boolean: false 
@@ -11,7 +10,6 @@ function Student ({student, index}) {
         "commenter": "",
         "comment": ""
     })
-
 
     const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
     function formatDOB (student) {
@@ -50,6 +48,19 @@ function Student ({student, index}) {
         });
     }
 
+    function colorCodedPercent (color) {
+        if ((student.codewars.current.total/student.codewars.goal.total * 100).toFixed(0) >= 100) {
+            color = "green";
+        }
+        if ((student.codewars.current.total/student.codewars.goal.total * 100).toFixed(0) >= 50 && (student.codewars.current.total/student.codewars.goal.total * 100).toFixed(0) < 100) {
+            color = "yellow";
+        }
+        if ((student.codewars.current.total/student.codewars.goal.total * 100).toFixed(0) < 50) {
+            color = "red";
+        }
+        return color;
+    }
+
     return (
         <div key={index} className="studentCard" >
         <div ><img src={student.profilePhoto} alt={student.id}/></div>
@@ -59,16 +70,16 @@ function Student ({student, index}) {
                 <p><span>Birthday:</span> {formatDOB(student)}</p>
                 <button className="showMoreButton" onClick={() => updateShowMore(student.id)} >{showMore.boolean && showMore[student.id] ? "Show Less..." : "Show More..." }</button>
             </div>
-        <div>{Object.values(student.certifications).every((certificate) => certificate) && student.codewars.current.total >= 600 ? <h4>On Track to Graduate</h4>: <h4>not on Track</h4>}</div>
-        {showMore.boolean && showMore[student.id] ? 
+        <div>{Object.values(student.certifications).every((certificate) => certificate) && student.codewars.current.total >= 600 ? <h4>On Track to Graduate</h4>: <h4>Not on Track</h4>}</div>
+        {showMore.boolean && showMore[student.id]? 
                 <div className="moreInfo">
                     <div className="info">
-                        <div>
+                        <div> 
                             <p><strong>Codewars: </strong></p>
                             <p><span>Current Total: </span>{student.codewars.current.total}</p>
                             <p><span>Last Week: </span>{student.codewars.current.lastWeek}</p>
                             <p><span>Goal: </span>{student.codewars.goal.total}</p>
-                            <p><span>Percent of Goal Achieved: </span>{(student.codewars.current.total/student.codewars.goal.total * 100).toFixed(0)}%</p>
+                            <p className={colorCodedPercent()}><span>Percent of Goal Achieved: </span>{(student.codewars.current.total/student.codewars.goal.total * 100).toFixed(0)}%</p>
                         </div>
                         <div>
                             <p><strong>Scores: </strong></p>
@@ -77,7 +88,7 @@ function Student ({student, index}) {
                             <p><span>Assessments: </span>{student.cohort.scores.assessments * 100}%</p>
                         </div>
                         <div>
-                            <p><strong>certifications: </strong></p>
+                            <p><strong>Certifications: </strong></p>
                             <p><span>Resume: </span>{student.certifications.resume ? "✅" : "❌"}</p>
                             <p><span>Linkedin: </span>{student.certifications.linkedin ? "✅" : "❌"}</p>
                             <p><span>Github: </span>{student.certifications.github ? "✅" : "❌"}</p>
@@ -85,7 +96,7 @@ function Student ({student, index}) {
                         </div>
                     </div>
                     <div className="comments">
-                        <h4>1-on-1 Notes</h4>
+                        <h3>Notes</h3>
                         <div>
                             <form className="commentForm" onSubmit={(event)=>onSubmit(event, student.id)}>
                                 <label htmlFor="commenter">Commenter Name</label>
