@@ -1,0 +1,135 @@
+header {
+    height: 50px;
+    background: rgb(174,238,210);
+    background: linear-gradient(223deg, rgba(174,238,210,1) 53%, rgba(193,174,238,1) 54%);    
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+header h1 {
+    color: white;
+}
+
+
+main {
+    display: grid;
+    grid-template-columns: 30% 70%;
+}
+
+.cohorts {
+    
+    background: rgb(174,238,210);
+    background: linear-gradient(223deg, rgba(174,238,210,1) 20%, rgba(193,174,238,1) 80%);
+    /* margin-right: 10px;  */
+}
+.cohorts li {
+    padding-bottom: 20px;
+    padding-right: 20px;
+   list-style-type: none; 
+   color:rgb(25, 142, 181)
+}
+.cohorts li:hover {
+    color: #e9bafa;
+}
+
+.students {
+    background: rgb(212,238,174);
+    background: linear-gradient(223deg, rgba(193,174,238,1) 80%, rgba(148,233,214,1) 100%);
+    /* text-align: center; */
+}
+ 
+img{
+    width: 200px;
+    max-height: 300px; 
+    
+    
+}
+
+h1 {
+    font-size: 20px;
+    
+}
+
+.oneStudent {
+    border: 2px solid rgb(74, 231, 233);
+    margin: 5px;
+    padding: 5px;
+}
+
+.infoPlacement {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+    align-items: start;
+    margin: 5px;
+        /* justify-content: flex-start; */
+}
+
+.studentInfo {
+    margin-left: 15px;
+}
+
+.students li {
+    list-style-type: none;
+} 
+
+.achievement {
+    margin: 5px;
+    border: 1px solid rgb(0, 255, 4);
+    display: flex;
+    justify-content:space-between;
+    padding-left: 7px;
+    padding-right: 7px;
+   
+}
+
+.achievement li {
+    list-style-type: none;
+    padding-bottom: 7px;
+} 
+
+form {
+    padding: 7px;
+     border: 1px solid black;
+ }
+ 
+ 
+form .dblock {
+     display: block;
+     margin: 3px;
+ }
+
+ .achievement .green {
+ color: green;
+ }
+
+.achievement .yellow {
+    color: yellow
+ }
+
+.achievement .red {
+    color: red;
+ }
+
+.note:hover {
+     border: 2px solid #63f48e;
+  background: #e9bafa;
+ }
+
+.show{
+    border: 0.3px; 
+    background: rgb(212,238,174);
+    background: linear-gradient(223deg, rgba(193,174,238,1) 80%, rgba(148,233,214,1) 100%);  
+    color: rgb(174,238,210);
+      }
+ 
+.show:hover {
+    color: green
+} 
+
+.graduates {
+    color: green;
+    
+    
+}
