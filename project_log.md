@@ -43,3 +43,5 @@ Blockers:
 - [Tailwind.css - Refactoring UI](https://github.com/Chetan11-dev/refactoring-ui-book/blob/main/Steve_Schoger_Adam_Wathan_Refactoring_UI.pdf)
 
 - [Tailwind.css - Responsive Design](https://tailwindcss.com/docs/responsive-design)
+
+- [Glowing Background Gradient Effects With Tailwind.css](https://youtu.be/5W6kEP65AH4)

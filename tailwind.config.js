@@ -9,6 +9,7 @@ module.exports = {
         sans: ["Inter var", ...defaultTheme.fontFamily.sans],
         babylonica: ["Babylonica", "cursive"],
         unbounded: ["Unbounded", "cursive"],
+        kanit: ["Kanit", "sans-serif"],
       },
       colors: {
         icecold: "#a0d2eb",
