@@ -1,0 +1,21 @@
+
+
+button {
+  width: 40%;
+  margin: 10px;
+  margin-left: 18%;
+  font-size: 20px;
+  background-color: #ccccff;
+  padding: 13px;
+  border: 2px solid #6666ff;
+  border-radius: 25%;
+  cursor: pointer;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+button:hover {
+  background-color: #9999ff;
+  color: whitesmoke;
+}
+

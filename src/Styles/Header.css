@@ -1,0 +1,15 @@
+
+.style__header{
+    background-color: #7f7fff;
+    padding:0.5%;
+}
+
+.header__title{
+    font-size: 45px;
+    font-weight: bold;
+    text-align: center;
+    color: whitesmoke;
+    letter-spacing: 1.3px;
+    font-family: 'Questrial', sans-serif;
+}
+
