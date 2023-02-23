@@ -8,14 +8,14 @@ export default function OneOnOneForm({ student }) {
     }
     const [note, setNote] = useState(blankNote)
 
-    const [notesArray, setNotesArray] = useState([])
+    const [notesArray, setNotesArray] = useState([student.notes[0]])
 
     function handleAddNote(event) {
         event.preventDefault();
         setNotesArray([...notesArray, note ]);
         setNote(blankNote)
     }
-    
+    console.log(student.notes[0].commenter)
 
     function handleNoteInput(event) {
         setNote({...note, [event.target.id]: event.target.value})
