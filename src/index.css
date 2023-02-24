@@ -1,0 +1,98 @@
+body {
+    font-family:Arial, Helvetica, sans-serif;
+    
+}
+.header {
+    height: 100px;
+    background-color: green;
+    color: white;
+    text-align: center;
+    padding-top: 5%;
+
+}
+main {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 50px;
+}
+hr {
+    border: 1px solid green;
+
+}
+
+.student-list {
+    display: grid;
+    border: green 5px solid;
+    margin-top: 10px; 
+    padding: 10px 5px 10px;
+}
+
+.student-info {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    line-height: 5px;
+}
+.student-name {
+    font-size: 16px;
+}
+img {
+    height: 100px;
+    width: 100px;
+    border: 1px solid black;
+}
+
+.cohort-list {
+    padding-left: 20px;
+}
+.cohort-title {
+    font-size: 12px;
+}
+.cohort-title:hover {
+    color: #45a049;
+    font-size: 14px;
+
+} 
+
+.show-more {
+    text-decoration: underline;
+    color: green;
+}
+.color-green {
+    color: green;
+}
+
+.student-data {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-left: 20px;
+}
+form {
+    border: 1px solid lightgray;
+    margin: 10px;
+    padding: 10px;
+}
+button {
+    background-color: green;
+    color: white;
+    padding: 8px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+
+}
+button:hover {
+    background-color: #45a049;
+  }
+input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.form-title {
+    margin-left: 20px;
+}
