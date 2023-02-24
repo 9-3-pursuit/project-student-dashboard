@@ -5,7 +5,6 @@ export default function Comments ({comments, addNewComment}) {
         const commenter = document.querySelector("input.commenter")
         const comment = document.querySelector("input.comment")
         const form = document.querySelector("form.oneOnOne")
-        console.log(commenter.value)
         addNewComment([...comments, {commenter: `${commenter.value}`, comment: `${comment.value}`}])
         form.reset()
     }

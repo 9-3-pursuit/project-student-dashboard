@@ -1,9 +1,6 @@
 import { useState } from "react";
 import Student from "./Student";
 export default function StudentList ({data, activeCohort}) {
-    console.log(data)
-    
-    console.log(activeCohort)
     return(
         <>
         <h1>{activeCohort}</h1>
