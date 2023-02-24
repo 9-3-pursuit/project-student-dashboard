@@ -1,6 +1,6 @@
 import Student from "./Student"
 
-export default function StudentList({ spring2025 }) {
+export default function StudentList({ }) {
     return (
         <div className="student_list">
             <h3>Spring 2025</h3>
