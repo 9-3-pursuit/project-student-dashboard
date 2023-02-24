@@ -1,0 +1,48 @@
+:root {
+    --light: #e2e2e2;
+    --green: rgb(105, 145, 146);
+    --primary: #3b8da4fb;
+    --secondary: #b27092;
+}
+
+/* Heading */
+header {
+    background: var(--green);
+    border-bottom: 2px solid var(--primary);
+    color: var(--light);
+    padding: 25px 0;
+    text-align: center;
+}
+
+/* Main section */
+.container {
+    display: grid;
+    gap: 25px;
+    grid-template-columns: 1fr 2fr;
+    margin: 25px auto;
+    width: 60%;
+}
+
+/* Cohort Section */
+.cohort_list {}
+
+.cohort_list hr {
+    height: 1.25px;
+    background-color: var(--primary);
+    border: none;
+}
+
+/* Student Section */
+.student_list a {
+    color: #0885f390;
+    text-decoration: underline;
+
+}
+
+.student_list li {
+    list-style: none;
+    border: 2px solid var(--primary);
+    border-radius: 5px;
+    margin: 15px;
+    padding: 5px;
+}
