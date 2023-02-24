@@ -4,12 +4,9 @@ import './Students.css';
 
 
 
-const Students = ({ data, student }) => {
+const Students = ({ student }) => {
   const [expandedStudentId, setExpandedStudentId] = useState(null);
   
-  
-  
-
   const handleShowDetails = (studentId) => {
     setExpandedStudentId(studentId === expandedStudentId ? null : studentId);
   };
@@ -24,7 +21,6 @@ const Students = ({ data, student }) => {
       const day = dateOfBirth[1]
       const year = dateOfBirth[2]
       const convertedDateOfBirth = `${month} ${day}, ${year}`
-      // console.log(123123123, convertedDateOfBirth)
       return convertedDateOfBirth
   
    

@@ -1,10 +1,8 @@
-import { useState } from "react";
 import './Cohorts.css';
 
-
-
-
-const Cohorts = ({data, handleCohortClick}) => {
+const Cohorts = ({ data, handleCohortClick }) => {
+    
+   
     
     
    
@@ -36,8 +34,7 @@ const Cohorts = ({data, handleCohortClick}) => {
         return `${season} ${year}`;
     });
 
-    // console.log("formattedCohortCodes:", formattedCohortCodes)
-    
+   
 
 
     return (

@@ -5,12 +5,6 @@ import './Student.css';
 
 const Student = ({ student }) => {
 
-  // const certifications = student.certifications;
-  console.log("certifications")
-  console.log("student", student)
-
-  
-
 
   const onTrackToGraduate = () => {
     const resumeCertification = student.certifications.resume;
@@ -41,7 +35,7 @@ const Student = ({ student }) => {
     if (percentageToGoal >= 1) {
       return 'green';
     } else if (percentageToGoal >= 0.5) {
-      return 'yellow';
+      return 'orange';
     } else {
       return 'red';
     }
@@ -55,17 +49,6 @@ const Student = ({ student }) => {
 
   }
 
-  console.log("codeWarsCurrentComparedToGoalPercentage", codeWarsCurrentComparedToGoalPercentage())
-
-  
-
-
-
- 
-  
-
-
-  
   return (
     <div key={student.id} className='card1'>
       <div>
