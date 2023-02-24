@@ -1,0 +1,12 @@
+.app {
+    display: grid;
+    grid-template-columns: 45%, 55%;
+    grid-template-rows: 10%, 90%;
+    grid-column-gap: 30px;
+    grid-row-gap: 0px;
+    padding-right: 0px;
+    }
+    
+    .div1 { grid-area: 1 / 1 / 2 / 6; }
+    .div2 { grid-area: 2 / 2 / 6 / 3; }
+    .div3 { grid-area: 2 / 1 / 6 / 2; }
