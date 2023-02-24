@@ -1,10 +1,8 @@
-import Header from "./Componets/Header/Header";
-import CohortList from "./Componets/CohortList/CohortList";
-import StudentList from "./Componets/StudentList/StudentList";
+import Header from "./componets/Header/Header";
+import CohortList from "./componets/CohortList/CohortList";
+import StudentList from "./componets/StudentList/StudentList";
 import { useState } from "react";
 import data from "./data/data.json";
-
-console.log(data);
 
 export default function App() {
   const OnScreenInitalState = {

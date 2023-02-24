@@ -32,28 +32,31 @@ I also need to keep track of which requirements I've built/fulfilled and which I
 > 1. ★ Additional student details
 > 1. ★ Improved student details
 > 1. ★ 1-on-1 section
-> 1. ✩ Interactive 1-on-1 section
-> 1. ✩ Style your application
+> 1. ★ Interactive 1-on-1 section
+> 1. ★ Style your application
 
 ## Reflection
 
-I am offically finished, as of **\_\_\_** at XX:XX .
+I am offically finished, as of **Wednesday, Feb 22** at **12:41** .
 
-I'm really proud of **\_\_\_**.
+I'm really proud of **making through this project**. The idea of this project was overwhelming and then life happend and actually made it overwhelming. But I finished! And early.
 
-I really struggled with **\_\_\_\_**.
+I really struggled with **motivation**. Like there was so much happening this week/weekend. I really focused on the plan thought which was nice. The plan made it managable. I went from requirment to requirment and just worked on one at a time. Once I got the componenet functional I refactored and then moved on. Once the project was finished I refactored everything all at once.
 
-My greatest take away is **\_\_\_\_**.
-
-- realized that i need a seperate thinking in react checklist for each component/section I create
+My greatest take away is **stick to the plan**. Next time I make a plan I'll write out a seperate "Thinking In React" checklist for each component. Because I eneded up refrencing the checked off ckecklist for almost every component. That way I can focus more on following the plan with less jumping back and forth.
 
 # Log Part 2: The Log Continues
 
 After completing this project I challenged myself to...
 
-- add dark mode by using useContext.
-- create a reducer function
-- use context to pass state/dispatch
-- add animations using the animation library
-- build a backend
-- some other challenge
+1. Create a reducer function
+   - I decided against a reducer function becuase there isn't a lot of complex state logic. Each state is set by one user interaction and seen by no more than two components. A reducer wouldn't serve much purpose.
+1. Use context to pass state/dispatch
+   - I decided against a reducer function becuase, as stated above, there isn't a lot of complex state logic, and because I refacroted to avoid unneccessary nesting of components. Context for state seems a bit excessive.
+1. Build a backend
+   - Sorry but just no. Not right now.
+1. Add animations using the animation library
+   - maybe...
+1. Add dark mode by using useContext.
+   - maybe...
+1. Some other challenge

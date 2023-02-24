@@ -18,12 +18,12 @@ function StatFromScores({ scoreInfo, SectionTitle }) {
     className = category.includes("completed")
       ? generatesTag(studentScore)
       : "";
-  const FormattedCategory = category[0].toUpperCase() + category.slice(1);
+  const formattedCategory = category[0].toUpperCase() + category.slice(1);
   const categoryScore = formatScore(category, studentScore, SectionTitle);
 
   return (
     <p className={className}>
-      {FormattedCategory}: {categoryScore}
+      {formattedCategory}: {categoryScore}
     </p>
   );
 }
