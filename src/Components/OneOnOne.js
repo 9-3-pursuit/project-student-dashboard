@@ -14,23 +14,17 @@ export default function OneOnOne() {
 
     function handleClick(e){
         e.preventDefault();
-        setComments();
-        return (
-            <div>
-                <ul>
-                    <li>{comments.name} says, "{comments.comment}"</li>
-                </ul>
-            </div>
-        )
-   }
-   
-   function addComment() {
-    const createComment = {
-        id: generateUniqueID(),
-        name: comments.name,
-        comment: comments.comment,
+        e.target.reset()
     }
-   }
+   
+    const addComment = (
+        <li>{comments.name} says, "{comments.comment}"</li>
+    )    
+          
+            
+   
+   
+ 
     return (
         <div>
             <h3 className="form-title">1-On-1 Notes</h3>
@@ -54,7 +48,9 @@ export default function OneOnOne() {
                 
                 <button onClick={handleClick}>Add Note</button>
             </form>
-            <div></div>
+            <div>
+                <ul>{addComment}</ul>
+            </div>
         </div>
     );
   }
