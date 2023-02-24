@@ -1,8 +1,5 @@
-import Data from "./data/data.json";
 
-
-  
-  function Cohort({ Data, setCohort }) {
+function Cohort({ setCohort }) {
     function updateCohort(e) {
       setCohort(e.target.id);
     }

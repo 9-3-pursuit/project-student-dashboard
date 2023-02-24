@@ -4,26 +4,29 @@
     padding: 10px;
     grid-column: left/end;
   
-  /* border: 2px solid black; */
 }
 
 .codeWars {
-  /* border: 2px solid black; */
+  padding-left: 20px;
   margin-left: 20px;
   margin-right: 20px;
 }
 
+.codewarsPercent {
+    width: 50px;
+}
+
 .scores {
-  /* border: 2px solid black; */
+  
   margin-right: 30px;
   margin-left: 70px;
 }
 
 .certifications {
-  /* border: 2px solid black; */
+
   margin-left: 50px;
 }
 .notes {
-    /* border: 2px solid black; */
+  
     grid-column: span 3;
   }

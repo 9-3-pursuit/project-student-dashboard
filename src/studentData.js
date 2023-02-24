@@ -1,13 +1,16 @@
+
+
+
 import React, { useState } from "react";
-import More from "./More";
-// import Form from "./Form";
+import ShowMore from "./ShowMore";
 
-function studentData({ el, birthday }) {
-  const [More, setMore] = useState(false);
+function StudentData({ el, birthday }) {
+  const [showMore, setShowMore] = useState(false);
 
- function toggleMore() {
-    setMore(!More);
+  function toggleShowMore() {
+    setShowMore(!showMore);
   }
+
   function onTrack() {
     if (
       el.certifications.resume === true &&
@@ -16,12 +19,12 @@ function studentData({ el, birthday }) {
       el.certifications.github === true &&
       el.codewars.current.total > 600
     ) {
-      return <p className="grad">On Track to Graduate</p>;
+      return <p className="grad">On Track to Graduate 🎓</p>;
     }
   }
 
   return (
-    <article className="studentsArticle" key={el.id}>
+    <article className="Article" key={el.id}>
       <img src={el.profilePhoto} alt={el.names.preferredName}></img>
       <div className="studentCards">
         <h3>
@@ -33,13 +36,14 @@ function studentData({ el, birthday }) {
           <span>Birthday: </span>
           {birthday}
         </p>
-        <button key={el.id} id="showMoreButton" onClick={toggleMore}>
-          {!More ? "Show More ..." : "Show Less ..."}
+        <button key={el.id} id="MoreButton" onClick={toggleShowMore}>
+          {!showMore ? "Show More ..." : "Show Less ..."}
         </button>
       </div>
-      {More && <More el={el} />}
+      {showMore && <ShowMore el={el} />}
       <p>{onTrack()}</p>
     </article>
   );
 }
-export default studentData;
+export default StudentData;
+

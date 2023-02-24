@@ -1,25 +1,17 @@
-
-import React, { useState } from "react";
+import React from "react";
 import "./Students.css";
-//import Form "./Form.css";
-import More from "./More"
-import studentData from "./studentData";
-import Cohort from "./Cohort";
-
-
-
+import StudentData from "./StudentData";
 
 function Students({ Data, cohort }) {
-
-  
   const studentData = Data.map((el) => {
     const dob = new Date(el.dob);
     const birthday = new Intl.DateTimeFormat("en-US", {
       dateStyle: "long",
     }).format(dob);
-    
-    return <studentData el={el} birthday={birthday} />;
+
+    return <StudentData el={el} birthday={birthday} />;
   });
+
   const filteredStudents = Data.filter((student) => {
     return student.cohort.cohortCode === cohort;
   });
@@ -29,7 +21,7 @@ function Students({ Data, cohort }) {
       dateStyle: "long",
     }).format(dob);
 
-    return <studentData el={el} birthday={birthday} />;
+    return <StudentData el={el} birthday={birthday} />;
   });
   let spacing = cohort.replace(/[^a-zA-Z]+/g, "");
   return (
@@ -46,7 +38,7 @@ function Students({ Data, cohort }) {
       </div>
     </>
   );
-  
 }
 
 export default Students;
+

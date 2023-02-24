@@ -6,16 +6,21 @@ function Form({ el }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    const obj = { commenter: commenter, comment: comment };
-    setNewNote([...newNote, obj]);
+    
+    addComment();
     setComment("");
     setCommenter("");
+  }
+
+  function addComment() {
+    const obj = { ...newNote, commenter: commenter, comment: comment };
+    newNote.push(obj);
   }
   return (
     <section className="form">
       <hr className="newForm"></hr>
       <h4>1-on-1 Notes</h4>
-      <form>
+      <form onSubmit={handleSubmit}>
         <label id="commenter">Commenter Name: </label>
         <input
           type="text"
@@ -42,11 +47,11 @@ function Form({ el }) {
         {newNote.map((comments) => {
           return (
             <li>
-              {comments.commenter} says, {comments.comment}
+              {comments.commenter} says, "{comments.comment}"
             </li>
           );
         })}
-        {handleSubmit}
+        {addComment}
       </ul>
     </section>
   );
