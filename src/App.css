@@ -1,0 +1,33 @@
+
+.Container {
+    display: grid;
+    grid-template-columns: 30% 70% ;
+    /* grid-template-rows: 1fr 1fr 1fr 1fr ; */
+    
+}
+.Header {
+    color: white;
+    text-align: center;
+    background: green;
+    padding: 60px;
+}
+
+.StudentDetails {
+    color: black;
+    border-style:double;
+    float:right;
+
+}
+.ListofCohorts {
+    float:left;
+    border-style:double
+}
+.studentdetail{
+border-style:double;
+border-color: green;
+list-style-type: none;
+}
+.cohortonclick{
+    list-style-type: none;
+    
+}
