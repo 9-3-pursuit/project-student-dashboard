@@ -31,13 +31,13 @@
 
 .title{
 margin-left: 45%;
-margin-top: -450px;
+transform: translateY(-480px);
 position: absolute;
 font-size: 30px;
 }
 
 .total_students{
 margin-left: 45%;
-margin-top: -390px;
+transform: translateY(-420px);
 position: absolute;
 }
