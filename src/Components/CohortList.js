@@ -6,7 +6,7 @@ function CohortList() {
   return;
 }
 
-const seasons = ["Fall", "Winter", "Spring", "Summer"];
+const seasons = ["Winter", "Spring", "Summer", "Fall"];
 
 function getAllCohortsList(students) {
   //   const cohorts = new Set();
