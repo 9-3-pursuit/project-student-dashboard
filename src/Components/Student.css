@@ -1,0 +1,21 @@
+.card{
+    display: grid;
+    grid-template-columns: 100px 1fr 2fr;
+    column-gap: 25px;
+    padding: 25px;
+    margin: 25px;
+    
+    border:   solid 1px green;
+    
+}
+     
+
+
+
+
+
+
+
+/* button.button2 {
+    padding: 25px;
+} */
