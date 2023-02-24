@@ -1,0 +1,121 @@
+.App{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.title{
+    background-color: rgb(100, 142, 100);
+    color: white;
+    text-align: center;
+    padding: 30px;
+    margin-top: 0px;
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+
+.card{
+    border: 2px solid rgb(100, 142, 100);
+    padding: 5px;
+    margin: 5px;
+}
+
+.card img{
+    height: 115px;
+    width: 115px;
+    float: left;
+    padding: 15px;
+    border-radius: 20px;
+}
+
+.card button{
+    background: none;
+    border: none;
+    padding: 10px;
+    text-decoration: underline;
+    color: rgb(100, 142, 100);
+    cursor: pointer;
+}
+
+.graduate{
+    color: rgb(100, 142, 100);
+    float: right;
+    cursor: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/happy.png"), auto;
+}
+
+.birthday span{
+    color: rgb(100, 142, 100);
+}
+
+.total span{
+    color: rgb(100, 142, 100);
+}
+
+
+.all-students{
+    grid-column-start: 2;
+    grid-column-end: 4;
+    margin-right: 40px;
+}
+
+.cohorts{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row: 2;
+}
+
+.cohorts li{
+    list-style: none;
+}
+
+.cohorts h3{
+    text-align: center;
+}
+
+.cohorts button{
+    background: none;
+    border: none;
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.cohorts button:hover{
+    color: rgb(100, 142, 100);
+}
+
+.cohort{
+    list-style: none;
+}
+
+.cohort button{
+    background: none;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.cohort button:hover{
+    color: rgb(100, 142, 100);
+}
+
+.line{
+    border-bottom: 1px solid rgb(100, 142, 100);
+    margin-right: 60px;
+}
+
+.line:hover{
+    transform: scale(1.15);
+}
+
+.green{
+    color: rgb(100, 142, 100)
+}
+
+.yellow{
+    color: rgb(226, 194, 17);
+}
+
+.red{
+    color: darkred;
+}
