@@ -1,37 +1,43 @@
+// import student from './student'
 import "./CohortList.css"
-export default function CohortList({data}) {
-    // console.log(CohortList)
+export default function CohortList({students, handleCohortSelect, handleHumanReadableCohort, setCohort}) {
+    const cohortsCount = {}
+    students.forEach((student)=> {
+        cohortsCount[student.cohort.cohortCode] = student.cohort.cohortStartDate
+    })
+    
+    
+    const cohorts = Object.keys(cohortsCount);
+    cohorts.sort((a, b) => {
+        return new Date(cohortsCount[a]) - new Date(cohortsCount[b])
+    });
+    
+
+
     return(
-        <div>
+        <div className="cohortList">
             <h2>Choose a Class by Start Date </h2>
             <ul>
-                <li>
-                    <button>All Students</button>
-                </li>
-                <li>
-                    <button>Winter 2026</button>
-                </li>
-                <li>
-                    <button>Fall 2026</button>
-                </li>
-                <li>
-                    <button>Summer 2026</button>
-                </li>
-                <li>
-                    <button>spring 2026</button>
-                </li>
-                <li>
-                    <button>Winter 2025</button>
-                </li>
-                <li>
-                    <button>Fall 2025</button>
-                </li>
-                <li>
-                    <button>Summer 2025</button>
-                </li>
-                <li>
-                    <button>Spring 2025</button>
-                </li>
+                <button key="all" className= "AllStudents" onClick={()=> setCohort(students)}>
+                    All Students
+                </button>
+
+                
+            {cohorts.map((cohortCode) => {
+                return (
+                    <button key={Math.random()} onClick={() => handleCohortSelect(cohortCode)}>
+                        
+                      {handleHumanReadableCohort(cohortCode)}  
+                    </button>
+                )
+
+            })}
+                    
+                    
+                   
+                    
+                
+               
             </ul>
         </div>
     )

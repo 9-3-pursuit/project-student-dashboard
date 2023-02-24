@@ -1,25 +1,21 @@
 .card{
     display: grid;
-    grid-template-columns: 100px 2fr 1fr;
+    grid-template-columns: 100px 1fr 2fr;
     column-gap: 25px;
     padding: 25px;
-    margin: 10px;
-    border: 2px solid green;
+    margin: 25px;
+    
+    border:   solid 1px green;
+    
 }
+     
 
-img{
-    width: 100px;
-    border-radius: 7px;
-}
 
-.toggle-details{
-    background-color: none;
-    border: none;
-    text-decoration: underline;
-    color: green;
 
-}
 
-span{
-    color: green;
-}
+
+
+
+/* button.button2 {
+    padding: 25px;
+} */
