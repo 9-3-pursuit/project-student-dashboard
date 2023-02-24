@@ -1,12 +1,14 @@
 
-
-// import { useState } from "react";
+ import { useState } from "react";
 import Data from "./data/data.json";
 import Cohort from "./Cohort";
 import Students from "./Students";
+// import Form from "./Form";
 
 import "./App.css";
 function App() {
+  const [cohort, setCohort] = useState("All Students");
+
   return (
 <div className="all">
 <div className="header">
@@ -32,12 +34,10 @@ function App() {
   <li>Summer 2025</li>
   <hr></hr>
   <li>Spring 2025</li> */}
-  <Cohort />
+  <Cohort setCohort={setCohort} />
   </div>
   <div className="students">
-          <h2>All Students</h2>
-          <h3>Total Students:</h3>
-          <Students Data={Data} />
+  <Students cohort={cohort} Data={Data} />
           </div>
           </div>
           </div>

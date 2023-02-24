@@ -1,4 +1,8 @@
-function ShowMore({ el }) {
+import "./More.css";
+import Form from "./Form";
+import "./Form.css";
+
+function More({ el }) {
     return (
       <section className="studentsDetails">
         <article className="codeWars">
@@ -37,7 +41,7 @@ function ShowMore({ el }) {
             {el.cohort.scores.assessments * 100}%
           </p>
         </article>
-        <article>
+        <article className="certifications">
           <h3>Certifications</h3>
           <p>
             <span>Resume: </span>
@@ -56,9 +60,10 @@ function ShowMore({ el }) {
             {el.certifications.github === false ? "❌" : "✅"}
           </p>
         </article>
+        <Form el={el} />
       </section>
     );
   }
   
-  export default ShowMore;
+  export default More;
   

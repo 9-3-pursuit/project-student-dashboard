@@ -1,24 +1,49 @@
-function Cohort() {
+import Data from "./data/data.json";
+
+
+  
+  function Cohort({ Data, setCohort }) {
+    function updateCohort(e) {
+      setCohort(e.target.id);
+    }
     return (
       <div className="cohort-list">
         <h2>Choose a Class by Start Date</h2>
-        <li>All Students</li>
+        <button id="All Students" onClick={updateCohort}>
+        All Students
+      </button>
         <hr></hr>
-        <button>Winter 2026</button>
+        <button id="Winter2026" onClick={updateCohort}>
+        Winter 2026
+      </button>
         <hr></hr>
-        <button>Fall 2026</button>
+        <button id="Fall2026" onClick={updateCohort}>
+        Fall 2026
+      </button>
         <hr></hr>
-        <button>Summer 2026</button>
+        <button id="Summer2026" onClick={updateCohort}>
+        Summer 2026
+      </button>
         <hr></hr>
-        <button>Spring 2026</button>
+        <button id="Spring2026" onClick={updateCohort}>
+        Spring 2026
+      </button>
         <hr></hr>
-        <button>Winter 2025</button>
+        <button id="Winter2025" onClick={updateCohort}>
+        Winter 2025
+      </button>
         <hr></hr>
-        <button>Fall 2025</button>
+        <button id="Fall2025" onClick={updateCohort}>
+        Fall 2025
+      </button>
         <hr></hr>
-        <button>Summer 2025</button>
+        <button id="Summer2025" onClick={updateCohort}>
+        Summer 2025
+      </button>
         <hr></hr>
-        <button>Spring 2025</button>
+        <button id="Spring2025" onClick={updateCohort}>
+        Spring 2025
+      </button>
       </div>
     );
   }

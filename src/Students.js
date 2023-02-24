@@ -1,35 +1,52 @@
-import React from "react";
-import "./Students.css";
-import More from "./More";
 
-function Students({ Data }) {
+import React, { useState } from "react";
+import "./Students.css";
+//import Form "./Form.css";
+import More from "./More"
+import studentData from "./studentData";
+import Cohort from "./Cohort";
+
+
+
+
+function Students({ Data, cohort }) {
+
   
   const studentData = Data.map((el) => {
     const dob = new Date(el.dob);
     const birthday = new Intl.DateTimeFormat("en-US", {
       dateStyle: "long",
     }).format(dob);
-    return (
-      <article key={el.id}>
-        <img src={el.profilePhoto} alt={el.names.preferredName}></img>
-        <div className="studentCards">
-          <h3>
-            {el.names.preferredName} {el.names.middleName.charAt(0)}.{" "}
-            {el.names.surname}
-          </h3>
-          <p>{el.username}</p>
-          <p>
-            <span>Birthday: </span>
-            {birthday}
-          </p>
-          <button id=">More">More ...</button>
-          <More el={el} />
-        </div>
-      </article>
-    );
+    
+    return <studentData el={el} birthday={birthday} />;
   });
+  const filteredStudents = Data.filter((student) => {
+    return student.cohort.cohortCode === cohort;
+  });
+  const filteredData = filteredStudents.map((el) => {
+    const dob = new Date(el.dob);
+    const birthday = new Intl.DateTimeFormat("en-US", {
+      dateStyle: "long",
+    }).format(dob);
 
-  return <div className="Return">{studentData}</div>;
+    return <studentData el={el} birthday={birthday} />;
+  });
+  let spacing = cohort.replace(/[^a-zA-Z]+/g, "");
+  return (
+    <>
+      <h2 className="studentText">
+        {cohort === "All Students" ? cohort : spacing + " " + cohort.slice(-4)}
+      </h2>
+      <h3 className="studentText">
+        Total Students:{" "}
+        {cohort === "All Students" ? studentData.length : filteredData.length}{" "}
+      </h3>
+      <div className="Return">
+        {cohort === "All Students" ? studentData : filteredData}
+      </div>
+    </>
+  );
+  
 }
 
 export default Students;
