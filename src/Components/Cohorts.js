@@ -22,7 +22,6 @@ const Cohorts = ({info, setCohort}) => {
             </ul>
         </div>
     )
-         // Only need to use .sort() method to organize the cohorts by date, either in ascending or descending order.
 }
 
 export default Cohorts;
