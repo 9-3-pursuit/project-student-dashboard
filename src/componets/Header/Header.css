@@ -1,0 +1,9 @@
+header {
+  background-color: rgb(124, 175, 147);
+  color: whitesmoke;
+  height: 15vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3rem;
+}

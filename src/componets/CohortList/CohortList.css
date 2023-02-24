@@ -1,0 +1,25 @@
+.cohort-list {
+  padding: 0 2rem;
+  min-width: 10rem;
+}
+
+.cohort-list h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.cohort-list table {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.cohort-list tr {
+  border-bottom: rgb(124, 175, 147) 0.2rem solid;
+  height: 3rem;
+  cursor: pointer;
+  font-weight: 900;
+}
+
+.cohort-list tr :hover {
+  background-color: rgba(124, 175, 147, 0.5);
+}
