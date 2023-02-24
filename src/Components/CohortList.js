@@ -1,4 +1,5 @@
 import students from "../data/data.json";
+import React from "react";
 
 function CohortList() {
   <h2>CohortList</h2>;
@@ -7,18 +8,38 @@ function CohortList() {
 
 const seasons = ["Fall", "Winter", "Spring", "Summer"];
 
-const cohort = {
-  id: "Fall2026",
-  startDate: new Date("09/08/2026"),
-  displayName: "Fall 2026",
-};
+function getAllCohortsList(students) {
+  //   const cohorts = new Set();
+  console.log(students);
+}
 
-const allCohorts = students.map((student) => student.cohort.corhortCode);
+getAllCohortsList(students);
 
-console.log(students);
+const allCohorts = students.map((student) => student.cohort.cohortCode);
 
-console.log(allCohorts.length);
+// console.log(students);
 
-// //   const uniqueCohort = new Set();
+console.log(allCohorts);
 
+//   for (let cohort of allCohorts) {
+//     cohorts.add(cohort);
+
+const cohortIDs = Array.from(allCohorts);
+console.log(cohortIDs);
+
+const finalCohortList = cohortIDs.map((cohortId) => {
+  const studentBelongingToCohort = students.find(
+    (student) => student.cohort.cohortCode === cohortId
+  );
+  return {
+    id: studentBelongingToCohort.cohort.cohortCode,
+    startDate: new Date(studentBelongingToCohort.cohort.cohortStartDate),
+    displayName: formatCohortName(studentBelongingToCohort.cohort.cohortCode),
+  };
+});
+console.log(finalCohortList);
+
+function formatCohortName(cohortId) {
+  console.log(cohortId);
+}
 export default CohortList;

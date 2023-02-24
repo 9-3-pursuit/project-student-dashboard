@@ -1,7 +1,7 @@
 import CohortDescription from "./Components/CohortDescription";
 import CohortList from "./Components/CohortList";
 import StudentCard from "./Components/StudentCard";
-
+import React from "react";
 function App() {
   return (
     <div>
