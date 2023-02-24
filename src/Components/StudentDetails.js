@@ -1,4 +1,4 @@
-function StudentDetails() {
+function StudentDetails( ) {
  
 
 
@@ -22,7 +22,7 @@ function StudentDetails() {
     
     return (
       <div>
-        <h3> All Students </h3> {/* will change to become dynamic based on prop passed when new cohort is clicked */}
+        <h3> All Students - {} </h3> {/* will change to become dynamic based on prop passed when new cohort is clicked */}
       </div>
     );
   }
