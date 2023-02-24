@@ -75,7 +75,7 @@ Update your cohort list so that the following is true:
 
 ### ✩ Interactive cohort list (1 point)
 
-![Interactive cohort list.](./instruction-assets/interactive-cohort-list.png)
+![Interactive cohort list.](./instruction-assets/interactive-cohort-list .png)
 
 Update your cohort list so that when any of the cohorts are clicked the student list updates to only show students in that cohort. To complete this feature, the following must be true:
 

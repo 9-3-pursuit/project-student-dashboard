@@ -1,0 +1,138 @@
+body{
+   background: rgb(126,11,129);  
+    background: linear-gradient(0deg, rgba(126,11,129,1) 0%, rgba(189,144,34,0.5424763655462185) 100%);  
+}
+
+
+header {
+  height: 50px;
+   background: rgb(126,11,129); 
+   background: linear-gradient(0deg, rgba(126,11,129,1) 0%, rgba(189,144,34,0.5424763655462185) 100%); 
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+header h1 {
+  color: white;
+}
+
+
+main {
+  display: grid;
+  grid-template-columns: 30% 70%;
+}
+
+.cohorts { 
+  
+   background:rgb(126,11,129); 
+  background:  linear-gradient(0deg, rgba(126,11,129,1) 0%, rgba(189,144,34,0.5424763655462185) 100%); 
+}
+  
+.cohorts li {
+  padding-bottom: 20px;
+ list-style-type: none;
+  
+  
+  
+}
+
+.students { 
+   background: linear-gradient(0deg, rgba(126,11,129,1) 0%, rgba(203,151,24,0.6993172268907564) 3%); 
+  background:  linear-gradient(0deg, rgba(126,11,129,1) 0%, rgba(189,144,34,0.5424763655462185) 100%); 
+   text-align: center;
+ } 
+
+img{
+  width: 200px;
+  max-height: 300px;
+  
+}
+
+h1 {
+  font-size: 20px;
+  
+}
+
+.oneStudent {
+  border: 2px solid rgb(89, 15, 101);
+  margin: 5px;
+  padding: 5px;
+}
+
+.infoPlacement {
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  align-items: start;
+  margin: 5px;
+}
+
+.studentInfo {
+  margin-left: 15px;
+}
+
+.students li {
+  list-style-type: none;
+} 
+
+.achievement {
+  margin: 5px;
+  border: 1px solid rgb(255, 81, 0);
+  display: flex;
+  justify-content:space-between;
+  padding-left: 7px;
+  padding-right: 7px;
+ 
+}
+
+.achievement li {
+  list-style-type: none;
+  padding-bottom: 7px;
+} 
+
+form {
+  padding: 7px;
+   border: 1px solid black;
+}
+
+
+/* form .dblock {
+   display: block; 
+   margin:3px;
+   
+} */
+
+.achievement .green{
+color: green;
+}
+
+.achievement .yellow {
+  color: yellow
+}
+
+.achievement .red {
+  color: red;
+}
+
+.comment:hover {
+  border: 2px solid #d108eb;
+  background: #94945c;
+  list-style: none;
+}
+.click{
+  border:none;
+  background:  rgba(177, 158, 64, 0.542) 100%;
+  color:#120114;
+  text-decoration: underline;
+}
+
+.graduate{
+  border:solid rgb(113, 6, 102);
+  color:#300236;
+}
+
+.cohorts li:hover{
+  color:#caca2a;
+  
+}
