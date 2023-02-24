@@ -1,4 +1,6 @@
 import { useState } from "react";
+import './Cohorts.css';
+
 
 
 
@@ -34,37 +36,18 @@ const Cohorts = ({data, handleCohortClick}) => {
         return `${season} ${year}`;
     });
 
-    console.log("formattedCohortCodes:", formattedCohortCodes)
-    
-    
+    // console.log("formattedCohortCodes:", formattedCohortCodes)
     
 
-    
-
-    // const filteredStudents = selectedCohort !== "" ?
-    // props.data.filter((student) => {
-    //     const formattedCohortCode = student.cohort.cohortCode;
-    //     const selectedCohortCode = selectedCohort.split(" ").join(""); 
-    //     const formattedCohortCodeWithoutSpaces = formattedCohortCode.split(" ").join(""); 
-    //     return formattedCohortCodeWithoutSpaces === selectedCohortCode;
-    // })
-    // : props.data;
-
-    
-   
-
-    
-   
-    
 
     return (
-        <div>
+        <div className="cohorts">
             <h2>Choose a Class by Start Date</h2>
-            <a href="#" onClick={() => handleCohortClick("All Students")} >All Students</a>
+            <button className="cohort"  onClick={() => handleCohortClick("All Students")} >All Students</button>
             {formattedCohortCodes.map((cohort) => {
                 return (
-                    <div key={cohort}>
-                        <a href="#" onClick={() => handleCohortClick(cohort)}>{cohort}</a>
+                    <div className="cohort2" key={cohort}>
+                        <button className="cohort1" onClick={() => handleCohortClick(cohort)}>{cohort}</button>
                     </div>
 
                 )

@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import './Comments.css';
 
 const Comments = ({ student }) => {
     
-    console.log(21312312, student)
+    
     const [comments, setComments] = useState({
         commenter: '', comment: ''
     });
@@ -31,20 +32,24 @@ const handleSubmit = (e) => {
   
 
   return (
-    <div>
+    <div className='comments'>
       <form onSubmit={handleSubmit}>
-        <label>Commenter</label>
-              <input type='text' id='commenter' value={comments.commenter} onChange={handleTextChange} />
-        <label>Comment</label>
-              <input type='text' id='comment' value={comments.comment} onChange={handleTextChange} />
+        <h3>1 on 1 Notes</h3>
+        <label>Commenter: </label>
+              <input className='comment_box' type='text' id='commenter' value={comments.commenter} onChange={handleTextChange} />
+              <br/> <br/>
+        <label>Comment: </label>
+        <input className='comment_box' type='text' id='comment' value={comments.comment} onChange={handleTextChange} />
+        <br />
+        <br/>
 
-        <button type='submit'>Add Note</button>
+        <button className='add_note'type='submit'>Add Note</button>
       </form>
       
       <div>
         <ul>
                   {submittedComment.filter((note) => student.id === note[student.id]).map((comment, index) => (
-              <li key={index}>{comment.commenter} {comment.comment}</li>
+              <li key={index}>{comment.commenter} says "{comment.comment}"</li>
               
           ))}
         </ul>

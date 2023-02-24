@@ -34,8 +34,8 @@ const Students = ({ data, student }) => {
 
   return (
     
-      
-        <div key={student.id} className="student-card">
+      <div className='student_card_container'>
+        <div className="student_card" key={student.id} >
           <h3>
             {student.names.preferredName} {student.names.middleName} {student.names.surname}
           </h3>
@@ -43,13 +43,14 @@ const Students = ({ data, student }) => {
           <p>Username: {student.username}</p>
           <p>Date of Birth: {convertedDateOfBirths(student.dob)}</p>
           <a href="#" onClick={() => handleShowDetails(student.id)}>
-            {expandedStudentId === student.id ? 'Show Less' : 'Show More'}
+            {expandedStudentId === student.id ? 'Show Less...' : 'Show More...'}
           </a>
           {expandedStudentId === student.id &&
             <Student student={student} />}
           
           
-        </div>
+      </div>
+      </div>
       
     
   );

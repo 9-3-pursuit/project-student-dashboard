@@ -1,0 +1,43 @@
+.header{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    /* border: 2px solid red; */
+    background-color: rgb(105, 146, 113);
+    font-weight: bold;
+    color: whitesmoke;
+    text-align: center;
+    
+    
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 15% 85%;
+    grid-template-rows: 15% 85%;
+    grid-gap: 10px;
+    
+  }
+  
+  .header {
+    grid-column: 1 / span 2; /* make the header span both columns */
+  }
+  
+  
+  
+.comment_box{
+    width: 140px;
+}
+
+.title{
+margin-left: 45%;
+margin-top: -450px;
+position: absolute;
+font-size: 30px;
+}
+
+.total_students{
+margin-left: 45%;
+margin-top: -390px;
+position: absolute;
+}

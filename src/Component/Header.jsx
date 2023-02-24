@@ -1,6 +1,8 @@
+import './Header.css';
+
 const Header = () => {
     return (
-        <header>
+        <header className='header'>
         <h1>Student Dashboard</h1>
         </header>
     );
