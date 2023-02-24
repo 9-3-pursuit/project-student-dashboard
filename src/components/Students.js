@@ -5,7 +5,7 @@ import { FcCheckmark } from "react-icons/fc";
 import { HiXMark } from "react-icons/hi2";
 
 
-export default function Students({ student }) {
+export default function Students({ student, notesArray, setNotesArray }) {
     const [visible, setVisibility] = useState(false);
     const [moreLess, setMoreLess] = useState("More");
     const formatBirthday = new Intl.DateTimeFormat("en", {
@@ -37,8 +37,8 @@ export default function Students({ student }) {
         }
     }
 
-                
-    console.log(student.profilePhoto)
+        
+
     return( 
         <div className="student">
             <img src={""/*student.profilePhoto*/} alt={student.names.preferredName} />
@@ -51,7 +51,7 @@ export default function Students({ student }) {
             <p className="graduationTrack"><span>{certificationsArray.every(cert => cert) ? "On Track to Graduate" : null}</span></p>
             
            {visible && 
-            <div className="studentDetails hide" >
+            <div className="studentDetails" >
                 <div>
                     <h3>Codewars:</h3>
                     <p><span>Current Total:</span> {student.codewars.current.total}</p>
@@ -75,6 +75,8 @@ export default function Students({ student }) {
                 <div>
                     <OneOnOneForm 
                         student={student}
+                        notesArray={notesArray}
+                        setNotesArray={setNotesArray}
                     />
                 </div>
             </div>}

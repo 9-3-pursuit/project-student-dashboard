@@ -9,14 +9,17 @@ function App() {
   const initialCohort = "All Students";
   const [cohort, setCohort] = useState(initialCohort);
   const [currentCohortArray, setCurrentCohortArray] = useState(studentData);
+  const [notesArray, setNotesArray] = useState([])
 
   function handleCohortClick(cohorts) {
-      if (cohorts === "All Students") {
-          setCurrentCohortArray(studentData)
-      } else {
-          const cohortArray = studentData.filter(student => addSpaceBetweenCohort(student.cohort.cohortCode) === cohorts)    
-          setCurrentCohortArray(cohortArray)
-      }
+    setCohort(cohorts)
+    
+    if (cohorts === "All Students") {
+        setCurrentCohortArray(studentData)
+    } else {
+        const cohortArray = studentData.filter(student => addSpaceBetweenCohort(student.cohort.cohortCode) === cohorts)    
+        setCurrentCohortArray(cohortArray)
+    }
   }
 
   return (
@@ -36,6 +39,8 @@ function App() {
           cohort={cohort} 
           currentCohortArray={currentCohortArray} 
           studentData={studentData}
+          notesArray={notesArray}
+          setNotesArray={setNotesArray}
         />
       </main>
     </div>

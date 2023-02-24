@@ -1,25 +1,25 @@
 import { useState } from "react";
 import "./OneOnOne.css";
 
-export default function OneOnOneForm({ student }) {
+export default function OneOnOneForm({ student, notesArray, setNotesArray }) {
     const blankNote = {
         commenter: "",
-        comment: ""
-    }
-    const [note, setNote] = useState(blankNote)
-
-    const [notesArray, setNotesArray] = useState([student.notes[0]])
+        comment: "",
+        id:""
+    };
+    const [note, setNote] = useState(blankNote);
 
     function handleAddNote(event) {
         event.preventDefault();
         setNotesArray([...notesArray, note ]);
-        setNote(blankNote)
+        setNote(blankNote);
     }
-    console.log(student.notes[0].commenter)
+    
 
     function handleNoteInput(event) {
-        setNote({...note, [event.target.id]: event.target.value})
+        setNote({...note, [event.target.id]: event.target.value, id: student.id});
     }
+
     return(
         <div className="notesDiv">
             <h4>1-on-1 Notes</h4>
@@ -35,9 +35,17 @@ export default function OneOnOneForm({ student }) {
                 <input className="submit" type="submit" value={"Add Note"} />
             </form>
             <ul>
-                {notesArray.map((noteObj, i) => {
+                {student.notes.map((note, i) => {
                     return (
-                        <li key={`${noteObj.commenter}${i}`}> <span>{noteObj.commenter}</span> says, "{noteObj.comment}"</li>
+                        <li key={`${note.commenter}-${note.id}-${i}`}> <span>{note.commenter}</span> says, "{note.comment}"</li>
+                    )
+                })}
+
+                {notesArray.filter(noteObj => noteObj.id === student.id)
+                .map((noteObj, i) => {
+                    
+                    return (
+                        <li key={`${noteObj.commenter}-${noteObj.id}-${i}`}> <span>{noteObj.commenter}</span> says, "{noteObj.comment}"</li>
                     )
                 })}
             </ul>

@@ -2,7 +2,7 @@ import Students from "./Students";
 
 
 
-export default function StudentList({ cohort, currentCohortArray, studentData }) {
+export default function StudentList({ cohort, currentCohortArray, studentData, notesArray, setNotesArray }) {
 
    
     return(
@@ -15,6 +15,8 @@ export default function StudentList({ cohort, currentCohortArray, studentData })
                     <Students 
                         key={student.id}
                         student={student}
+                        notesArray={notesArray}
+                        setNotesArray={setNotesArray}
                     />
                 )
                 })}
