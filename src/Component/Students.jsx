@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import Student from './Student';
 import './Students.css';
+import creepySmilyFace from './CreepySmilyFace.jpeg';
+
 
 
 
@@ -35,7 +37,8 @@ const Students = ({ student }) => {
           <h3>
             {student.names.preferredName} {student.names.middleName} {student.names.surname}
           </h3>
-          <img src={student.profilePhoto} alt="Profile" />
+        {/* <img src={student.profilePhoto} alt="Profile" /> */}
+        <img src={creepySmilyFace} alt='Profile'/>
           <p>Username: {student.username}</p>
           <p>Date of Birth: {convertedDateOfBirths(student.dob)}</p>
           <a href="#" onClick={() => handleShowDetails(student.id)}>
