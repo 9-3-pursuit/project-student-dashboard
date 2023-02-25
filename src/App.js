@@ -24,8 +24,8 @@ function App() {
 
   return (
     <div>
-      <header>Student Dashboard</header>
       <main>
+      <header>Student Dashboard</header>
         <CohortList 
           studentData={studentData} 
           setCohort={setCohort} 

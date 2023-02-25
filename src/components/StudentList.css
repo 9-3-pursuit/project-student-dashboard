@@ -1,4 +1,11 @@
 
+
+.studentListDiv {
+    margin: 20px 40px;
+    grid-column: 2;
+    grid-row: 2;
+}
+
 .studentDivs {
     display: grid;
     row-gap: 10px;

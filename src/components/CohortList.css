@@ -2,6 +2,10 @@
 .cohortDiv {
     width: 400px;
     height: auto;
+    margin: 20px 40px;
+    grid-column: 1;
+    grid-row: 2;
+    position: sticky;
 }
 
 .cohortHeader {
