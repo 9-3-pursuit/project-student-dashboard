@@ -1,0 +1,55 @@
+.cohorts{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: left;
+    width: 30%;
+    height: 100%;
+    /* border: 2px solid rgb(0, 255, 85); */
+    margin-left: 20px;
+    font-size: larger;
+}
+
+.cohorts:hover{
+    cursor: pointer;
+    
+}
+
+
+.cohort{
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid rgb(0, 255, 187);
+    text-align: left;
+
+}
+
+.cohort:hover{
+    cursor: pointer;
+    background-color: aquamarine;
+    
+}
+
+.cohort1{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: transparent;
+    border: none;
+}
+
+.cohort1:hover{
+    cursor: pointer;
+    background-color: aquamarine;
+}
+
+.cohort2{
+    border-bottom: 2px solid rgb(0, 255, 187);
+}
+
+.cohort2:hover{
+    cursor: pointer;
+    background-color: aquamarine;
+}

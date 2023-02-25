@@ -1,0 +1,22 @@
+img{
+    height: 50px;
+    margin-top: -24px;
+}
+
+.student_card{
+    border: 2px solid rgb(0, 255, 187);
+    width: 50%;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 100% ;
+    grid-template-rows: auto 1px; 
+    grid-gap: 10px;
+    align-self: start; 
+    
+
+    margin-bottom: 10px;
+    margin-right: 10px;
+    margin-left: 45%;
+    transform: translateY(-360px);
+}
+
