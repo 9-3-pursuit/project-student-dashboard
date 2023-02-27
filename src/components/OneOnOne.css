@@ -1,0 +1,26 @@
+.notesDiv {
+    border-top: 2px solid #5c946f;
+    width: 780px;
+}
+
+form {
+    border: 2px solid #5c946f;
+    width: 740px;
+    height: 100px;
+    display: grid;
+    justify-items: start;
+    padding: 20px;
+}
+
+.commentDiv {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.submit {
+    height: 25px;
+    color: white;
+    background: #5c946f;
+    border-radius: 5px;
+}

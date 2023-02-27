@@ -1,0 +1,19 @@
+
+.cohortDiv {
+    width: 400px;
+    height: auto;
+    margin: 20px 40px;
+    grid-column: 1;
+    grid-row: 2;
+    position: sticky;
+}
+
+.cohortHeader {
+    text-align: center;
+}
+
+.cohorts {
+    border-bottom: 2px solid #5c946f;
+    padding: 0 0 10px 10px;
+    cursor: pointer;
+}
