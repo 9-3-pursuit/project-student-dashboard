@@ -30,7 +30,7 @@ main {
    color:rgb(25, 142, 181)
 }
 .cohorts li:hover {
-    color: #e9bafa;
+    color: #040304;
 }
 
 .students {
@@ -114,14 +114,14 @@ form .dblock {
 
 .note:hover {
      border: 2px solid #63f48e;
-  background: #e9bafa;
+  background: #a076ca;
  }
 
 .show{
     border: 0.3px; 
     background: rgb(212,238,174);
     background: linear-gradient(223deg, rgba(193,174,238,1) 80%, rgba(148,233,214,1) 100%);  
-    color: rgb(174,238,210);
+    color: rgb(0, 0, 0);
       }
  
 .show:hover {
