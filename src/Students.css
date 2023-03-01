@@ -1,0 +1,60 @@
+.Article {
+    display: grid;
+    grid-template-columns: [left] 100px [middle] 2fr [right] 1fr [end];
+    grid-column-gap: 25px;
+    border: 3px solid blue;
+    padding: 2rem;
+    margin-top: 10px;
+    border-radius: 20px;
+  }
+  
+  .Article:hover {
+    background-color: rgb(162, 162, 234);
+  }
+  
+  .Return {
+    padding: 20px;
+  }
+  .studentCards {
+    margin-left: 50px;
+  }
+  
+  img {
+    height: 150px;
+    width: 150px;
+    border-radius: 20px;
+    margin-top: 20px;
+  }
+  
+  span {
+    color: green;
+  }
+
+  #MoreButton {
+    background: none;
+    border: none;
+    text-decoration: underline;
+    color: aqua;
+    padding-left: 0;
+    font-size: 20px;
+  }
+  
+  #MoreButton:hover {
+    color: black;
+  }
+  
+  button {
+    background: none;
+    border: none;
+    color:black;
+    font-size: 30px;
+    padding-left: 20px;
+    text-align: center;
+    font-size: 23px;
+    padding: 5px;
+    font-weight: bold;
+  }
+  
+  button:hover {
+    color: aqua;
+  }

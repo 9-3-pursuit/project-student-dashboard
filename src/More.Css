@@ -1,0 +1,32 @@
+.studentsDetails {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 10px;
+    grid-column: left/end;
+  
+}
+
+.codeWars {
+  padding-left: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.codewarsPercent {
+    width: 50px;
+}
+
+.scores {
+  
+  margin-right: 30px;
+  margin-left: 70px;
+}
+
+.certifications {
+
+  margin-left: 50px;
+}
+.notes {
+  
+    grid-column: span 3;
+  }
