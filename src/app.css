@@ -15,7 +15,7 @@ header {
     justify-items: center;
     align-items: center;
     height: 100px;
-    width: 100vw;
+    width: auto;
     background: #5c946f;
     color: white;
     font-size: 24px;
