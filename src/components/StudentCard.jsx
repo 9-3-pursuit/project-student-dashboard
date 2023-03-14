@@ -1,5 +1,5 @@
 import { useState } from "react";
-import userImg from "../assets/user-img3.png";
+import userImg from "../assets/user-img.png";
 
 function StudentCard({ student, comments, setComments }) {
   const [showMore, setShowMore] = useState(false);
